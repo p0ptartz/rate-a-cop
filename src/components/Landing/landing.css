@@ -1,0 +1,94 @@
+.landing-container{
+    height: 60vh;
+    min-height: 250px;
+    width: 100vw;
+    background-image: linear-gradient(rgba(250, 168, 162, 0.728) 30%, rgba(248, 248, 248, 0.492)  ,rgba(10, 22, 74, 0.675) ), url(https://images.unsplash.com/photo-1529586073768-05e0b5a65696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-color: rgb(250, 168, 162);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    /* justify-content: center; */
+}
+
+.blur{
+    height: 60vh;
+    width: 100vw;
+       display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.334);
+     min-height: 250px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    min-height: 30px;
+    width: 40vw;
+    margin: 5% 0;
+    font-size: 2.4vw;
+    letter-spacing: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title-1{
+    height: 5vh;
+    min-height: 30px;
+    width: 11vw;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #16243e;
+    color: rgb(255, 254, 238);
+}
+
+.title-2{
+    height: 5vh;
+    min-height: 30px;
+    width: 11vw;
+    min-width: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgba(255, 254, 238, 0.767);
+color: #16243e;
+}
+
+.start{
+    letter-spacing: 1.2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.directions{
+    width: 40vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    letter-spacing: 1.2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 3% 0 1% 0;
+}
+
+.input-form{
+    width: 50vw;
+    height: 6vh;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#search {
+    width: 50vw;
+    border: none;
+    border-radius: 50px;
+}
+

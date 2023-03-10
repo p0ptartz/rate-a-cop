@@ -1,0 +1,48 @@
+
+.nav-container {
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 254, 238);
+}
+
+.logo {
+    height: 10vh;
+    width: 20vw;
+    /* background-image: url(./pig.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; */
+}
+
+.login{
+    width: 30vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+a {
+    padding: 3% 10%;
+    border: 1px solid black;
+    margin-right: 2%;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(35, 35, 35);
+}
+
+.login button {
+    padding: 3% 10%;
+    border: 1px solid black;
+    margin-right: 2%;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(35, 35, 35);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.login button:hover {}

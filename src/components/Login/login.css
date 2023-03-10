@@ -1,0 +1,53 @@
+
+
+.login-modal {
+  background-color: rgba(255, 255, 246, 0.971);
+  height: 80vh;
+  width: 40vw;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+
+}
+
+/* .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+} */
+
+form {
+   height: 80vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+  align-items: center;
+ }
+
+#username,
+#password,
+#submit {
+  height: 7vh;
+  width: 30vw;
+}
+
+#username,
+#password{
+  border: none;
+border-bottom: 1px solid rgb(22, 22, 73);
+padding-left: 4%;
+background-color: transparent;
+margin: 0 0 3% 0;
+}
+
+#submit {
+  border: none;
+  background-color: rgb(251, 85, 85);
+  color: white;
+  border-radius: 50px;
+margin-top: 5%;
+}
