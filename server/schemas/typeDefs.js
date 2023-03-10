@@ -2,52 +2,53 @@ const {gql} = require('apollo-server-express');
 
 const typeDefs = gql`
     type Location {
-        _id: ID,
+        _id: ID
         name: String!
-        departments: [Department]
-        officers: [Officer]
+        departments: String!
+        officers: String!
     }
 
     type Department {
         _id: ID
         name: String!
-        officers: [Officer]
+        officers: String!
     }
 
     type Officer {
         _id: ID
         name: String!
-        position: String
-        officerId: INT
-        ratings: [Rating]
+        position: String!
+        officerId: Int!
+        ratings: String!
     }
 
     type Feedback {
         _id: ID
-        review: String
-        rating: INT
+        review: String!
+        rating: Int!
     }
 
     type User {
         _id: ID
         username: String!
         password: String!
-        ratings: [Rating]
+        ratings: String!
     }
 
     type Query {
-        feedbacks: [Feedback]!
-        feedback(feedbackId: ID!): Feedback
+        feedbacks: String!
+        feedback(feedbackId: ID!): String!
 
     }
 
     type Mutation {
-        login:
-        addFeedback:
-        addOfficer:
-        addDepartment:
-        addLocation:
-        removeFeedback
+        login: String!
+        addFeedback: String!
+        addUser: String!
+        addOfficer: String!
+        addDepartment: String!
+        addLocation: String!
+        removeFeedback: String!
     }
 `
 
