@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const officerSchema = new Schema ({
+const officerSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -12,7 +12,7 @@ const officerSchema = new Schema ({
         trim: true,
     },
     officerId: {
-        type: Int32Array,
+        type: Number,
         required: true,
         trim: true,
     },
