@@ -1,6 +1,7 @@
 const {gql} = require('apollo-server-express');
 
 const typeDefs = gql`
+    scalar StringOrInt
     type Location {
         _id: ID
         name: String!
@@ -30,9 +31,9 @@ const typeDefs = gql`
 
     type User {
         _id: ID
-        username: String!
-        password: String!
-        ratings: String!
+        username: StringOrInt!
+        password: StringOrInt!
+        ratings: StringOrInt!
     }
 
     type Query {
