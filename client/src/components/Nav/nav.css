@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 254, 238);
+    background-color: rgb(251, 251, 245);
 }
 
 .logo {
@@ -23,15 +23,6 @@
     display: flex;
     align-items: center;
     font-size: 1.5vw;
-}
-
-a {
-    padding: 3% 10%;
-    border: 1px solid black;
-    margin-right: 2%;
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(35, 35, 35);
 }
 
 .login button {
