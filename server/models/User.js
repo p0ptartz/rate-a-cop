@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 
-const usersSchema = new Schema ({
+const usersSchema = new Schema({
     username: {
-        type: StringOrInt, 
+        type: StringOrInt,
         required: true,
         trim: true,
     },
@@ -12,13 +12,13 @@ const usersSchema = new Schema ({
         trim: true,
     },
     ratings: {
-        type: StringOrInt, 
-        required: true, 
-        trim: true 
+        type: StringOrInt,
+        required: true,
+        trim: true
     }
 
 });
 
-const Users = model('Users', usersSchema); 
+const Users = model('Users', usersSchema);
 
 module.exports = Users
