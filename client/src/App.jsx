@@ -7,7 +7,10 @@ import Landing from "./components/Landing/Landing";
 import Login from "./components/Login/Login";
 import Officers from "./components/Officers/Officers";
 
-
+const client = new ApolloClient({
+    uri: '/graphql',
+    cache: new InMemoryCache(),
+});
 
 function App() {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -21,7 +24,7 @@ function App() {
     };
 
     return (
-
+      <ApolloProvider client={client}>
         <Router>
             <div>
                 <Nav onLoginClick={handleLoginClick} />
@@ -48,7 +51,7 @@ function App() {
                 </Routes>
             </div>
         </Router>
-
+    </ApolloProvider>
 
 
 
