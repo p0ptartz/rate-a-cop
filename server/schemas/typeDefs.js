@@ -45,11 +45,11 @@ const typeDefs = gql`
     type Mutation {
         login: String!
         signup: String!
-        addFeedback: String!
+        addFeedback(review: String!, rating: Int!): Feedback
         addUser: String!
         addOfficer: String!
-        addDepartment: String!
-        addLocation: String!
+        addDepartment(name: String!, officers: String!): Department
+        addLocation(name: String!, departments: String!, officers: String!): Location
         removeFeedback: String!
     }
 `
