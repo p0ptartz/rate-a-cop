@@ -62,11 +62,3 @@ export const REMOVE_FEEDBACK = gql`
   }
 `;
 
-export default {
-    ADD_FEEDBACK,
-    ADD_USER,
-    ADD_OFFICER,
-    ADD_DEPARTMENT,
-    ADD_LOCATION,
-    REMOVE_FEEDBACK,
-  }
