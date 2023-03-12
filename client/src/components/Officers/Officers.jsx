@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import {
   ADD_FEEDBACK,
@@ -14,12 +14,16 @@ function Officers() {
   const [addLocation] = useMutation(ADD_LOCATION);
   const [removeFeedback] = useMutation(REMOVE_FEEDBACK);
 
+  const [feedback, setFeedback] = useState({ review: '', rating: 0 });
+  const [department, setDepartment] = useState({ name: '', officers: '' });
+  const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
+
   const handleAddFeedback = async () => {
     try {
       const { data } = await addFeedback({
         variables: {
-          review: 'Great job!',
-          rating: 5,
+          review: feedback.review,
+          rating: Number(feedback.rating),
         },
       });
       console.log('Added feedback:', data.addFeedback);
@@ -32,8 +36,8 @@ function Officers() {
     try {
       const { data } = await addDepartment({
         variables: {
-          name: 'Police Department',
-          officers: 'Officer A, Officer B',
+          name: department.name,
+          officers: department.officers,
         },
       });
       console.log('Added department:', data.addDepartment);
@@ -46,9 +50,9 @@ function Officers() {
     try {
       const { data } = await addLocation({
         variables: {
-          name: 'City Hall',
-          departments: 'Police Department, Fire Department',
-          officers: 'Officer A, Officer B',
+          name: location.name,
+          departments: location.departments,
+          officers: location.officers,
         },
       });
       console.log('Added location:', data.addLocation);
@@ -82,17 +86,48 @@ function Officers() {
         </div>
         <div className="graph-container">
           <div className="graph-body">
-            <button onClick={handleAddFeedback}>Add Feedback</button>
-            <button onClick={handleAddDepartment}>Add Department</button>
-            <button onClick={handleAddLocation}>Add Location</button>
-            <button onClick={handleRemoveFeedback}>Remove Feedback</button>
-          </div>
+            <div className="input-container">
+              <label htmlFor="rating-input">Rating:</label>
+              <input type="number" id="rating-input" value={feedback.rating} onChange={(e) => setFeedback({ ...feedback, rating: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="review-input">Review:</label>
+              <textarea id="review-input" value={feedback.review} onChange={(e) => setFeedback({ ...feedback, review: e.target.value })}></textarea>
+            </div>
+            <div className="input-container">
+              <label htmlFor="department-name-input">Department Name:</label>
+              <input type="text" id="department-name-input" value={department.name} onChange={(e) => setDepartment({ ...department, name: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="department-officers-input">Department Officers:</label>
+              <input type="text" id="department-officers-input" value={department.officers} onChange={(e) => setDepartment({ ...department, officers: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="location-name-input">Location Name:</label>
+              <input type="text" id="location-name-input" value={location.name} onChange={(e) => setLocation({ ...location, name: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="location-departments-input">Location Departments:</label>
+              <input type="text" id="location-departments-input" value={location.departments} onChange={(e) => setLocation({ ...location, departments: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="location-officers-input">Location Officers:</label>
+              <input type="text" id="location-officers-input" value={location.officers} onChange={(e) => setLocation({ ...location, officers: e.target.value })} />
+            </div>
+            <div className="btn-container">
+        <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
+        <button className="add-department-btn" onClick={handleAddDepartment}>Add Department</button>
+        <button className="add-location-btn" onClick={handleAddLocation}>Add Location</button>
+        <button className="remove-feedback-btn" onClick={handleRemoveFeedback}>Remove Feedback</button>
+                    </div>
+            </div>
         </div>
-      </section>
     </section>
-  );
+</section>
+);
 }
 
 export default Officers;
+
 
 
