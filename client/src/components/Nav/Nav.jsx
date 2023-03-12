@@ -6,8 +6,7 @@ function Nav({ onLoginClick }) {
         <div className="nav-container">
             <div className="logo"></div>
             <div className="login">
-                <button onClick={onLoginClick}>Login</button>
-                <button>Sign-Up</button>
+                <button onClick={onLoginClick}>Login / Sign-up</button>
             </div>
         </div>
     );
