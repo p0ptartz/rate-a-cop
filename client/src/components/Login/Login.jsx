@@ -26,7 +26,7 @@ function Login() {
                         <a href="">or go back to Home</a>
                     </div>
                     {/* <button className="close-button">
-                        home
+                        home 
                     </button> */}
                 </form>
             </div>

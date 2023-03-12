@@ -17,6 +17,7 @@ function Officers() {
   const [feedback, setFeedback] = useState({ review: '', rating: 0 });
   const [department, setDepartment] = useState({ name: '', officers: '' });
   const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
+  const [feedbackIdToRemove, setFeedbackIdToRemove] = useState('');
 
   const handleAddFeedback = async () => {
     try {
@@ -65,14 +66,16 @@ function Officers() {
     try {
       const { data } = await removeFeedback({
         variables: {
-          feedbackId: 'feedbackId123',
+          feedbackId: feedbackIdToRemove,
         },
       });
-      console.log('Removed feedback with ID feedbackId123:', data.removeFeedback);
+      console.log('Removed feedback with ID ' + feedbackIdToRemove + ':', data.removeFeedback);
     } catch (error) {
       console.error('Error removing feedback:', error);
     }
   };
+  
+
 
   return (
     <section className="officer-container">
@@ -118,7 +121,9 @@ function Officers() {
         <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
         <button className="add-department-btn" onClick={handleAddDepartment}>Add Department</button>
         <button className="add-location-btn" onClick={handleAddLocation}>Add Location</button>
-        <button className="remove-feedback-btn" onClick={handleRemoveFeedback}>Remove Feedback</button>
+        <button className="remove-feedback-btn" onClick={() => setFeedbackIdToRemove('feedback-id-to-remove')}>Remove Feedback</button>
+
+      
                     </div>
             </div>
         </div>
