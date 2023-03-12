@@ -20,7 +20,3 @@ export const GET_FEEDBACK_BY_ID = gql`
   }
 `;
 
-module.exports = {
-    GET_FEEDBACKS,
-    GET_FEEDBACK_BY_ID,
-};
