@@ -16,12 +16,16 @@ function Landing() {
                 <div className="start">
                     <p>GET STARTED:</p>
                 </div>
-                <div className="directions">
-                    <p>Search by State, City, or Zip-code</p>
+                <div className="direction-container">
+
+                    <div className="directions">
+                        <p>Search by State, City, or Zip-code</p>
+                    </div>
+                    <div className="input-form">
+                        <input id="search" type="text" aria-label="search" placeholder="State, City, Zip-Code" />
+                    </div>
                 </div>
-                <div className="input-form">
-                    <input id="search" type="text" aria-label="search" placeholder="State, City, Zip-Code" />
-                </div>
+
             </div>
 
         </div>
