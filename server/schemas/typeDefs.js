@@ -1,4 +1,4 @@
-const {gql} = require('apollo-server-express');
+const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     scalar StringOrInt
@@ -40,6 +40,8 @@ const typeDefs = gql`
         feedbacks: [Feedback]
         feedback(feedbackId: ID!): String!
         users: [User]
+        locations: [Location]
+
     }
 
     type Mutation {

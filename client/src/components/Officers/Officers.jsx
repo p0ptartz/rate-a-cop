@@ -56,24 +56,24 @@ function Officers() {
           officers: location.officers,
         },
       });
-      console.log('Added location:', data.addLocation);
+      console.log('Added location:', location.name, location.departments, location.officers);
     } catch (error) {
       console.error('Error adding location:', error);
     }
   };
 
- const handleRemoveFeedback = async () => {
-  try {
-    const { data } = await removeFeedback({
-      variables: {
-        feedbackId: feedbackIdToRemove,
-      },
-    });
-    console.log('Removed feedback with ID ' + feedbackIdToRemove + ':', data.removeFeedback);
-  } catch (error) {
-    console.error('Error removing feedback:', error);
-  }
-};
+  const handleRemoveFeedback = async () => {
+    try {
+      const { data } = await removeFeedback({
+        variables: {
+          feedbackId: feedbackIdToRemove,
+        },
+      });
+      console.log('Removed feedback with ID ' + feedbackIdToRemove + ':', data.removeFeedback);
+    } catch (error) {
+      console.error('Error removing feedback:', error);
+    }
+  };
 
 
 
@@ -118,18 +118,18 @@ function Officers() {
               <input type="text" id="location-officers-input" value={location.officers} onChange={(e) => setLocation({ ...location, officers: e.target.value })} />
             </div>
             <div className="btn-container">
-        <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
-        <button className="add-department-btn" onClick={handleAddDepartment}>Add Department</button>
-        <button className="add-location-btn" onClick={handleAddLocation}>Add Location</button>
-        <button className="remove-feedback-btn" onClick={() => setFeedbackIdToRemove('feedback-id-to-remove')}>Remove Feedback</button>
+              <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
+              <button className="add-department-btn" onClick={handleAddDepartment}>Add Department</button>
+              <button className="add-location-btn" onClick={handleAddLocation}>Add Location</button>
+              <button className="remove-feedback-btn" onClick={() => setFeedbackIdToRemove('feedback-id-to-remove')}>Remove Feedback</button>
 
-      
-                    </div>
+
             </div>
+          </div>
         </div>
+      </section>
     </section>
-</section>
-);
+  );
 }
 
 export default Officers;
