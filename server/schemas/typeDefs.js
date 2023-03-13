@@ -48,7 +48,7 @@ const typeDefs = gql`
         login: String!
         signup: String!
         addFeedback(review: String!, rating: Int!): Feedback
-        addUser: String!
+        addUser(username: StringorInt!, password: StringorInt!): User
         addOfficer: String!
         addDepartment(name: String!, officers: String!): Department
         addLocation(name: String!, departments: String!, officers: String!): Location
