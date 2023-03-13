@@ -1,9 +1,0 @@
-{
-  "short_name": "Rate-a-cop",
-  "name": "Place to give Tha Police your Feedback",
-  "icons": [ ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
