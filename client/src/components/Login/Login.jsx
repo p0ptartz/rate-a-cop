@@ -1,7 +1,23 @@
 import React from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../../utils/mutations";
 import "./login.css";
 
 function Login({ onCloseClick }) {
+    const [addUser] = useMutation(ADD_USER);
+
+    const handleAddUser = async() => {
+        try{
+            const { data } = await addUser({
+                variables: {
+                    username: user.username,
+                    password: user.password,
+                }
+            })
+        }
+    }
+
+
     return (
         <div className="login-overlay">
             <section className="login-contain">
@@ -17,10 +33,10 @@ function Login({ onCloseClick }) {
 
                         </div>
                         <div>
-                            <input type="text" id="username" name="username" placeholder="Username*" />
+                            <input type="text" id="username" value={user.username} placeholder="Username*" />
                         </div>
                         <div>
-                            <input type="password" id="password" name="password" placeholder="Password*" />
+                            <input type="password" id="password" value={user.password} placeholder="Password*" />
                         </div>
                         <div>
                             <button type="submit" id="submit">Login</button>
