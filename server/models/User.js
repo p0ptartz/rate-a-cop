@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const usersSchema = new Schema({
     username: {
@@ -11,12 +12,12 @@ const usersSchema = new Schema({
         required: true,
         trim: true,
     },
-    ratings: {
-        type: Number,
-        required: true,
-        trim: true
-    }
-
+    ratings: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Feedback',
+    },
+],
 });
 
 //Save password
