@@ -41,7 +41,7 @@ const typeDefs = gql`
         feedback(feedbackId: ID!): String!
         users: [User]
         locations: [Location]
-
+        departments: [Department]
     }
 
     type Mutation {
