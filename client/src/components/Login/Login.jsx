@@ -1,22 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
 import "./login.css";
 
+import Auth from '../../utils/auth';
+
 function Login({ onCloseClick }) {
-    const [addUser] = useMutation(ADD_USER);
+    const [addUser, { error, data }] = useMutation(ADD_USER);
 
-    const handleAddUser = async() => {
-        try{
-            const { data } = await addUser({
-                variables: {
-                    username: user.username,
-                    password: user.password,
-                }
-            })
-        }
-    }
+    const [loginState, setLoginState] = useState({
+        username: '',
+        password:'',
+    });
 
+
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setLoginState({
+        ...loginState,
+        [name]: value,
+      });
+    };
+  
+    const handleLoginSubmit = async (event) => {
+      event.preventDefault();
+      console.log(loginState);
+  
+      try {
+        const { data } = await addUser({
+          variables: { ...loginState },
+        });
+  
+        Auth.login(data.addUser.token);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+  
 
     return (
         <div className="login-overlay">
@@ -28,15 +49,24 @@ function Login({ onCloseClick }) {
                         <h2>LOGIN</h2>
                     </div>
                     <div className="line"></div>
-                    <form className="login-form">
+                    <form className="login-form" onSubmit={handleLoginSubmit}>
                         <div id="hidden" >
 
                         </div>
                         <div>
-                            <input type="text" id="username" value={user.username} placeholder="Username*" />
+                            <input type="text" 
+                            name="username" 
+                            id="username" 
+                            value={loginState.username} 
+                            onChange={handleChange} 
+                            placeholder="Username*" />
                         </div>
                         <div>
-                            <input type="password" id="password" value={user.password} placeholder="Password*" />
+                            <input type="password" name="password" 
+                            id="password" 
+                            value={loginState.password} 
+                            onChange={handleChange} 
+                            placeholder="Password*" />
                         </div>
                         <div>
                             <button type="submit" id="submit">Login</button>
@@ -56,15 +86,28 @@ function Login({ onCloseClick }) {
                     <div className="login-text">
                         <h2>SIGN UP</h2>
                     </div>
-                    <form className="login-form">
+                    <form className="login-form" onSubmit={handleLoginSubmit}>
                         <div>
-                            <input type="text" id="signup-email" name="username" placeholder="Email Address*" />
+                            <input type="text"
+                             id="signup-email"
+                            //  name="email" 
+                            //  value={loginState.email} 
+                            //  onChange={handleChange} 
+                             placeholder="Email Address*" />
                         </div>
                         <div>
-                            <input type="text" id="signup-username" name="username" placeholder="Username*" />
+                            <input type="text" id="signup-username" 
+                            name="username" 
+                            value={loginState.username} 
+                            onChange={handleChange} 
+                            placeholder="Username*" />
                         </div>
                         <div>
-                            <input type="password" id="signup-password" name="password" placeholder="Password*" />
+                            <input type="password" id="signup-password" 
+                            name="password" 
+                            value={loginState.password} 
+                            onChange={handleChange} 
+                            placeholder="Password*" />
                         </div>
                         <div>
                             <button type="submit" id="signup-submit" className="signup-submit">Sign Up</button>
