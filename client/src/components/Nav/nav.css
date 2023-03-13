@@ -8,6 +8,15 @@
     background-color: rgb(251, 251, 245);
 }
 
+.nav-title{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.6vw;
+     width: 25vw;
+     text-align: center;
+     letter-spacing: 3px;
+     border-right: 1px solid rgb(44, 44, 44);
+     
+}
 .logo {
     height: 10vh;
     width: 20vw;
@@ -29,7 +38,7 @@
 .login button {
     padding: 3% 10%;
     border: 1px solid black;
-    
+    border-radius: 50px;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(35, 35, 35);
@@ -37,4 +46,13 @@
     cursor: pointer;
 }
 
-.login button:hover {}
+.login button:hover {
+    color: rgb(211, 25, 25);
+    border: 1px solid rgb(211, 25, 25);
+    color: rgb(41, 87, 167);
+}
+
+.login button:active {
+     transform: scale(1);
+     box-shadow: 0 0 10px rgb(243, 172, 172);
+}

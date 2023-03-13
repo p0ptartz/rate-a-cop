@@ -4,6 +4,7 @@ import "./nav.css";
 function Nav({ onLoginClick }) {
     return (
         <div className="nav-container">
+            <div className="nav-title">Rate-A-Cop</div>
             <div className="logo"></div>
             <div className="login">
                 <button onClick={onLoginClick}>Login / Sign-up</button>
