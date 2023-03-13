@@ -89,14 +89,14 @@ function Login({ onCloseClick }) {
                             name="username" 
                             id="username" 
                             value={loginState.username} 
-                            onChange={handleChange} 
+                            onChange={handleLoginChange} 
                             placeholder="Username*" />
                         </div>
                         <div>
                             <input type="password" name="password" 
                             id="password" 
                             value={loginState.password} 
-                            onChange={handleChange} 
+                            onChange={handleLoginChange} 
                             placeholder="Password*" />
                         </div>
                         <div>
@@ -130,14 +130,14 @@ function Login({ onCloseClick }) {
                             <input type="text" id="signup-username" 
                             name="username" 
                             value={signupState.username} 
-                            onChange={handleChange} 
+                            onChange={handleSignUpChange} 
                             placeholder="Username*" />
                         </div>
                         <div>
                             <input type="password" id="signup-password" 
                             name="password" 
                             value={signupState.password} 
-                            onChange={handleChange} 
+                            onChange={handleSignUpChange} 
                             placeholder="Password*" />
                         </div>
                         <div>
