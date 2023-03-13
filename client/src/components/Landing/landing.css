@@ -44,7 +44,7 @@
     width: 11vw;
     min-width: 100px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     background-color: #16243e;
     color: rgb(255, 254, 238);
