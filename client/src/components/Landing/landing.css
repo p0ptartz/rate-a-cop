@@ -32,7 +32,7 @@
     height: 6vh;
     min-height: 30px;
     width: 40vw;
-    margin: 5% 0;
+    margin: 5vh 0;
     font-size: 2.4vw;
     letter-spacing: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -44,7 +44,7 @@
     width: 11vw;
     min-width: 100px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     background-color: #16243e;
     color: rgb(255, 254, 238);
@@ -62,12 +62,26 @@ background-color: rgb(251, 251, 245);
 color: #16243e;
 }
 
+.direction-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 25vh;
+}
+
 .start{
+    height: 10vh;
+    width: 100vw;
     letter-spacing: 1.2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .directions{
-    width: 40vw;
+    width: 100vw;
     height: 8vh;
     display: flex;
     justify-content: center;
@@ -75,13 +89,16 @@ color: #16243e;
     font-size: 2vw;
     letter-spacing: 1.2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 3% 0 1% 0;
+    margin: 0 0 1% 0;
 }
 
+.directions p{
+    line-height: 10px;
+}
 .input-form{
     width: 50vw;
     height: 6vh;
-    min-height: 40px;
+    /* min-height: 40px; */
     display: flex;
     justify-content: center;
 }
@@ -90,5 +107,6 @@ color: #16243e;
     width: 50vw;
     border: none;
     border-radius: 50px;
+    padding-left: 3%;
 }
 
