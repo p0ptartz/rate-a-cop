@@ -33,12 +33,14 @@ const typeDefs = gql`
         _id: ID
         username: StringOrInt!
         password: StringOrInt!
-        ratings: StringOrInt!
+        ratings: [Feedback]
     }
 
     type Query {
-        feedbacks: String!
+        feedbacks: [Feedback]
         feedback(feedbackId: ID!): String!
+        users: [User]
+
 
     }
 
