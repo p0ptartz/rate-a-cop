@@ -32,7 +32,7 @@ function Login({ onCloseClick }) {
           variables: { ...loginState },
         });
   
-        Auth.login(data.addUser.token);
+        // Auth.login(data.addUser.token);
       } catch (e) {
         console.error(e);
       }

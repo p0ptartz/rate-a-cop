@@ -13,11 +13,9 @@ export const ADD_FEEDBACK = gql`
 export const ADD_USER = gql`
   mutation AddUser($username: StringOrInt!, $password: StringOrInt!) {
     addUser(username: $username, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
+      _id
+      username
+      password
     }
   }
 `;
