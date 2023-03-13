@@ -11,9 +11,15 @@ function Login({ onCloseClick }) {
         password: '',
     });
 
+    const [signupState, setSignUpState] = useState({
+        username: '',
+        password: '',
+    });
+
+
     const [addUser, { error, data }] = useMutation(ADD_USER);
 
-    const handleChange = (event) => {
+    const handleLoginChange = (event) => {
       const { name, value } = event.target;
         // console.log(name, value)
   
@@ -27,16 +33,41 @@ function Login({ onCloseClick }) {
       event.preventDefault();
       console.log(loginState);
   
-      try {
-        const { data } = await addUser({
-          variables: { ...loginState },
-        });
+    //   try {
+    //     const { data } = await login({
+    //       variables: { ...loginState },
+    //     });
   
-        // Auth.login(data.addUser.token);
-      } catch (e) {
-        console.error(e);
-      }
+    //     // Auth.login(data.addUser.token);
+    //   } catch (e) {
+    //     console.error(e);
+    //   }
     };
+
+    const handleSignUpChange = (event) => {
+        const { name, value } = event.target;
+          // console.log(name, value)
+    
+        setSignUpState({
+          ...signupState,
+          [name]: value,
+        });
+      };
+
+    const handleSignUpSubmit = async (event) => {
+        event.preventDefault();
+        console.log(signupState);
+    
+        try {
+          const { data } = await addUser({
+            variables: { ...signupState },
+          });
+    
+          // Auth.login(data.addUser.token);
+        } catch (e) {
+          console.error(e);
+        }
+      }; 
   
 
     return (
@@ -86,7 +117,7 @@ function Login({ onCloseClick }) {
                     <div className="login-text">
                         <h2>SIGN UP</h2>
                     </div>
-                    <form className="login-form" onSubmit={handleLoginSubmit}>
+                    <form className="login-form" onSubmit={handleSignUpSubmit}>
                         <div>
                             <input type="text"
                              id="signup-email"
@@ -98,14 +129,14 @@ function Login({ onCloseClick }) {
                         <div>
                             <input type="text" id="signup-username" 
                             name="username" 
-                            value={loginState.username} 
+                            value={signupState.username} 
                             onChange={handleChange} 
                             placeholder="Username*" />
                         </div>
                         <div>
                             <input type="password" id="signup-password" 
                             name="password" 
-                            value={loginState.password} 
+                            value={signupState.password} 
                             onChange={handleChange} 
                             placeholder="Password*" />
                         </div>
