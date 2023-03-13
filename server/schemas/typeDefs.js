@@ -37,7 +37,7 @@ const typeDefs = gql`
     }
 
     type Query {
-        feedbacks: String!
+        feedbacks: [Feedback]
         feedback(feedbackId: ID!): String!
         users: [User]
 
