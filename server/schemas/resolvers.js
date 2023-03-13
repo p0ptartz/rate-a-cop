@@ -1,5 +1,5 @@
 const { Department, Feedback, Location, User, } = require('../models');
-const { authMiddleware, signToken } = require ('./utils/auth');
+const { authMiddleware, signToken } = require ('../utils/auth');
 
 const resolvers = {
     Query: {
