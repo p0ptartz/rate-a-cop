@@ -22,6 +22,9 @@ const resolvers = {
         // department: async (parent, { departmentId }) => {
             // return Department.findOne({ _id: departmentId });
         // }, 
+        users: async () => {
+            return User.find().sort({ createdAt: -1 })
+        }
 
     },
 
@@ -46,7 +49,7 @@ const resolvers = {
         addUser: async (parent, { username, password }) => {
             const user = await User.create({ username, password });
             // const token = signToken(user);
-            return { user }; //removed token
+            return user; //removed token
         },
 
         addFeedback: async (parent, { review, rating }) => {
