@@ -5,6 +5,9 @@ function Nav({ onLoginClick }) {
     return (
         <div className="nav-container">
             <div className="nav-title">Rate-A-Cop</div>
+            <div className="nav-about">
+                <p className="nav-about-p">GIVING POWER<br /> TO <br />THE PUBLIC</p>
+            </div>
             <div className="logo"></div>
             <div className="login">
                 <button onClick={onLoginClick}>Login / Sign-up</button>
