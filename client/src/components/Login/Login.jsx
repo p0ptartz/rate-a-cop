@@ -6,16 +6,16 @@ import "./login.css";
 import Auth from '../../utils/auth';
 
 function Login({ onCloseClick }) {
-    const [addUser, { error, data }] = useMutation(ADD_USER);
-
     const [loginState, setLoginState] = useState({
         username: '',
-        password:'',
+        password: '',
     });
 
+    const [addUser, { error, data }] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
       const { name, value } = event.target;
+        // console.log(name, value)
   
       setLoginState({
         ...loginState,
