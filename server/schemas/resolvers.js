@@ -15,6 +15,13 @@ const resolvers = {
         // location: async (parent, { locationId }) => {
         //     return Location.findOne({ _id: locationId });
         // },
+        departments: async () => {
+            return Department.find().sort({ createdAt: -1 });
+        },
+        // department: async (parent, { departmentId }) => {
+            // return Department.findOne({ _id: departmentId });
+        // }, 
+
     },
 
     Mutation: {

@@ -40,3 +40,22 @@ query GetLocationById($locationId: ID!){
 }
 `
 
+export const GET_DEPARTMENTS = gql`
+  query GetDepartments {
+    departments {
+        _id
+        name 
+        officers
+    }
+  }
+`;
+
+export const GET_DEPARTMENT_BY_ID = gql`
+query GetDepartmentByID($departmenId: ID!) {
+    department(departmentId: $departmentId) {
+        _id
+        name
+        officers
+    }
+}
+`;

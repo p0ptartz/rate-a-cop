@@ -41,7 +41,7 @@ function Officers() {
           officers: department.officers,
         },
       });
-      console.log('Added department:', data.addDepartment);
+      console.log('Added department:', department.name, department.officers);
     } catch (error) {
       console.error('Error adding department:', error);
     }
