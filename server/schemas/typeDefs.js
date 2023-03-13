@@ -35,6 +35,11 @@ const typeDefs = gql`
         ratings: [Feedback]
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Query {
         feedbacks: [Feedback]
         feedback(feedbackId: ID!): String!
