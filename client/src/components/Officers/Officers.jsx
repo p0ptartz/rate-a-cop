@@ -17,6 +17,7 @@ function Officers() {
   const [feedback, setFeedback] = useState({ review: '', rating: 0 });
   const [department, setDepartment] = useState({ name: '', officers: '' });
   const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
+  const [feedbackIdToRemove, setFeedbackIdToRemove] = useState('');
 
   const handleAddFeedback = async () => {
     try {
@@ -26,7 +27,7 @@ function Officers() {
           rating: Number(feedback.rating),
         },
       });
-      console.log('Added feedback:', data.addFeedback);
+      console.log('Added feedback:', feedback.review);
     } catch (error) {
       console.error('Error adding feedback:', error);
     }
@@ -61,18 +62,20 @@ function Officers() {
     }
   };
 
-  const handleRemoveFeedback = async () => {
-    try {
-      const { data } = await removeFeedback({
-        variables: {
-          feedbackId: 'feedbackId123',
-        },
-      });
-      console.log('Removed feedback with ID feedbackId123:', data.removeFeedback);
-    } catch (error) {
-      console.error('Error removing feedback:', error);
-    }
-  };
+ const handleRemoveFeedback = async () => {
+  try {
+    const { data } = await removeFeedback({
+      variables: {
+        feedbackId: feedbackIdToRemove,
+      },
+    });
+    console.log('Removed feedback with ID ' + feedbackIdToRemove + ':', data.removeFeedback);
+  } catch (error) {
+    console.error('Error removing feedback:', error);
+  }
+};
+
+
 
   return (
     <section className="officer-container">
@@ -118,7 +121,9 @@ function Officers() {
         <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
         <button className="add-department-btn" onClick={handleAddDepartment}>Add Department</button>
         <button className="add-location-btn" onClick={handleAddLocation}>Add Location</button>
-        <button className="remove-feedback-btn" onClick={handleRemoveFeedback}>Remove Feedback</button>
+        <button className="remove-feedback-btn" onClick={() => setFeedbackIdToRemove('feedback-id-to-remove')}>Remove Feedback</button>
+
+      
                     </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ const resolvers = {
             return Feedback.find().sort({ createdAt: -1 });
         },
 
-        feedback: async() => {
+        feedback: async(parent, { feedbackId }) => {
             return Feedback.findOne({ _id: feedbackId });
         },
     },
@@ -34,9 +34,11 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        // addFeedback: async (parent, { review, rating }, context) => {
-        //     if (context.user)
-        // }
+        addFeedback: async (parent, { review, rating }) => {
+            const feedback = await Feedback.create({ review, rating });
+            return feedback;
+        },
+        
     }
 }
 
