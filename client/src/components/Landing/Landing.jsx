@@ -24,6 +24,8 @@ function Landing() {
                     <div className="input-form">
                         <input id="search" type="text" aria-label="search" placeholder="State, City, Zip-Code" />
                     </div>
+                    <button className="search-btn">Search</button>
+
                 </div>
 
             </div>
