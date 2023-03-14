@@ -4,10 +4,10 @@ import {
   ADD_FEEDBACK,
   ADD_DEPARTMENT,
   ADD_LOCATION,
-  REMOVE_FEEDBACK,
+
 } from '../../utils/mutations';
 import './Officers.css';
-import { useNavigate } from 'react-router-dom'
+
 
 function Officers() {
 
@@ -15,69 +15,23 @@ function Officers() {
   const [addFeedback] = useMutation(ADD_FEEDBACK);
   const [addDepartment] = useMutation(ADD_DEPARTMENT);
   const [addLocation] = useMutation(ADD_LOCATION);
-  const [removeFeedback] = useMutation(REMOVE_FEEDBACK);
+  
 
   const [feedback, setFeedback] = useState({ review: '', rating: 0 });
   const [department, setDepartment] = useState({ name: '', officers: '' });
   const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
-  const [feedbackIdToRemove, setFeedbackIdToRemove] = useState('');
-
-  const handleAddFeedback = async () => {
-    try {
-      const { data } = await addFeedback({
-        variables: {
-          review: feedback.review,
-          rating: Number(feedback.rating),
-        },
-      });
-      console.log('Added feedback:', feedback.review);
-    } catch (error) {
-      console.error('Error adding feedback:', error);
-    }
+  
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Submitting form...', feedback, department, location);
+    await Promise.all([
+      addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
+      addDepartment({ variables: { name: department.name, officers: department.officers } }),
+      addLocation({ variables: { name: location.name, departments: location.departments, officers: location.officers } }),
+    ]);
+    console.log('Form submitted', feedback, department, location);
   };
-
-  const handleAddDepartment = async () => {
-    try {
-      const { data } = await addDepartment({
-        variables: {
-          name: department.name,
-          officers: department.officers,
-        },
-      });
-      console.log('Added department:', department.name, department.officers);
-    } catch (error) {
-      console.error('Error adding department:', error);
-    }
-  };
-
-  const handleAddLocation = async () => {
-    try {
-      const { data } = await addLocation({
-        variables: {
-          name: location.name,
-          departments: location.departments,
-          officers: location.officers,
-        },
-      });
-      console.log('Added location:', location.name, location.departments, location.officers);
-    } catch (error) {
-      console.error('Error adding location:', error);
-    }
-  };
-
-  const handleRemoveFeedback = async () => {
-    try {
-      const { data } = await removeFeedback({
-        variables: {
-          feedbackId: feedbackIdToRemove,
-        },
-      });
-      console.log('Removed feedback with ID ' + feedbackIdToRemove + ':', data.removeFeedback);
-    } catch (error) {
-      console.error('Error removing feedback:', error);
-    }
-  };
-
+  
 
 
   return (
@@ -138,10 +92,8 @@ function Officers() {
               onChange={(e) => setLocation({ ...location, officers: e.target.value })} />
             </div>
             <div className="btn-container">
-              <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
-              <button className="add-department-btn" onClick={handleAddDepartment}>Add Department</button>
-              <button className="add-location-btn" onClick={handleAddLocation}>Add Location</button>
-              <button className="remove-feedback-btn" onClick={() => setFeedbackIdToRemove('feedback-id-to-remove')}>Remove Feedback</button>
+              <button className='submit-btn' onClick={handleFormSubmit}>Submit</button>
+              
 
 
             </div>
