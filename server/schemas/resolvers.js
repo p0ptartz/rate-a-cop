@@ -53,9 +53,11 @@ const resolvers = {
             return user; //removed token
         },
 
+
         addFeedback: async (parent, { review, rating }) => {
             console.log("checking")
             const feedback = await Feedback.create({ review, rating });
+
             return feedback;
         },
         addLocation: async (parent, { name, departments, officers }) => {
