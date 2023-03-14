@@ -46,6 +46,7 @@ const typeDefs = gql`
         users: [User]
         locations: [Location]
         departments: [Department]
+        officers: [Officer]
     }
 
     type Mutation {

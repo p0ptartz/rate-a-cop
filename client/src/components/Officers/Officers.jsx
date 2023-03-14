@@ -7,14 +7,14 @@ import {
   REMOVE_FEEDBACK,
 } from '../../utils/mutations';
 import './Officers.css';
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 function Officers() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
-  useEffect(() => {
-    navigate('/officer');
-  }, []);
+  // useEffect(() => {
+  //   navigate('/officer');
+  // }, []);
 
   const [addFeedback] = useMutation(ADD_FEEDBACK);
   const [addDepartment] = useMutation(ADD_DEPARTMENT);
