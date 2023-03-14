@@ -5,9 +5,12 @@ import { useNavigate } from 'react-router-dom';
 function Landing() {
     const navigate = useNavigate()
 
-    function handleSearch() {
+    async function handleSearch() {
         const searchText = document.getElementById('search').value;
-        navigate(`/officer`);
+        const response = await fetch(`/api/mapquest/${searchText}`)
+        const data = await response.json()
+        console.log(data);
+        // navigate(`/officer`);
     }
 
     return (
