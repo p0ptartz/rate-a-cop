@@ -56,14 +56,19 @@ function Login({ onCloseClick }) {
 
     const handleSignUpSubmit = async (event) => {
         event.preventDefault();
-        console.log(signupState);
+        // console.log(signupState);
     
         try {
           const { data } = await addUser({
             variables: { ...signupState },
           });
-    
-          // Auth.login(data.addUser.token);
+
+          setSignUpState({
+            ...signupState,
+            username: '',
+            password: '',
+          })
+          
         } catch (e) {
           console.error(e);
         }

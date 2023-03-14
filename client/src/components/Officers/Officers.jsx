@@ -82,7 +82,7 @@ function Officers() {
       <section className="officer-rating">
         <div className="officer-stats-container">
           <div className="officer-stats">
-            <h2 className="officer-name">Officers Name</h2>
+            <h2 className="officer-name">Officer's Name</h2>
             <p className="officer-ratings"><span className='avg'>3</span>/5</p>
             <p className="review"></p>
           </div>
@@ -91,31 +91,48 @@ function Officers() {
           <div className="graph-body">
             <div className="input-container">
               <label htmlFor="rating-input">Rating:</label>
-              <input type="number" id="rating-input" value={feedback.rating} onChange={(e) => setFeedback({ ...feedback, rating: e.target.value })} />
+              <input type="number" 
+              id="rating-input" 
+              value={feedback.rating} 
+              onChange={(e) => setFeedback({ ...feedback, rating: e.target.value })} />
             </div>
             <div className="input-container">
               <label htmlFor="review-input">Review:</label>
-              <textarea id="review-input" value={feedback.review} onChange={(e) => setFeedback({ ...feedback, review: e.target.value })}></textarea>
+              <textarea id="review-input" 
+              value={feedback.review} 
+              onChange={(e) => setFeedback({ ...feedback, review: e.target.value })}></textarea>
             </div>
             <div className="input-container">
               <label htmlFor="department-name-input">Department Name:</label>
-              <input type="text" id="department-name-input" value={department.name} onChange={(e) => setDepartment({ ...department, name: e.target.value })} />
+              <input type="text" 
+              id="department-name-input" 
+              value={department.name} 
+              onChange={(e) => setDepartment({ ...department, name: e.target.value })} />
             </div>
             <div className="input-container">
               <label htmlFor="department-officers-input">Department Officers:</label>
-              <input type="text" id="department-officers-input" value={department.officers} onChange={(e) => setDepartment({ ...department, officers: e.target.value })} />
+              <input type="text" id="department-officers-input" 
+              value={department.officers} 
+              onChange={(e) => setDepartment({ ...department, officers: e.target.value })} />
             </div>
             <div className="input-container">
               <label htmlFor="location-name-input">Location Name:</label>
-              <input type="text" id="location-name-input" value={location.name} onChange={(e) => setLocation({ ...location, name: e.target.value })} />
+              <input type="text"
+              id="location-name-input" 
+              value={location.name} 
+              onChange={(e) => setLocation({ ...location, name: e.target.value })} />
             </div>
             <div className="input-container">
               <label htmlFor="location-departments-input">Location Departments:</label>
-              <input type="text" id="location-departments-input" value={location.departments} onChange={(e) => setLocation({ ...location, departments: e.target.value })} />
+              <input type="text" id="location-departments-input" 
+              value={location.departments} 
+              onChange={(e) => setLocation({ ...location, departments: e.target.value })} />
             </div>
             <div className="input-container">
               <label htmlFor="location-officers-input">Location Officers:</label>
-              <input type="text" id="location-officers-input" value={location.officers} onChange={(e) => setLocation({ ...location, officers: e.target.value })} />
+              <input type="text" id="location-officers-input" 
+              value={location.officers} 
+              onChange={(e) => setLocation({ ...location, officers: e.target.value })} />
             </div>
             <div className="btn-container">
               <button className="add-feedback-btn" onClick={handleAddFeedback}>Add Feedback</button>
