@@ -5,6 +5,7 @@
   "dependencies": {},
   "scripts": {
     "start": "node server/server.js",
+    "homepage": "https://rate-a-cop-acab.herokuapp.com/",
     "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
