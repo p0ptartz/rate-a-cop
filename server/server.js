@@ -25,6 +25,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+// app.get("*", (req, res) => {
+//   let url = path.join(__dirname, '../client/build', 'index.html');
+//   if (!url.startsWith('/app/')) // we're on local windows
+//     url = url.substring(1);
+//   res.sendFile(url);
+// });
+
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();

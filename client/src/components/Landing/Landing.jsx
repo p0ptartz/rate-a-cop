@@ -1,7 +1,15 @@
 import React from "react";
 import "./landing.css"
+import { useNavigate } from 'react-router-dom';
 
 function Landing() {
+    const navigate = useNavigate()
+
+    function handleSearch() {
+        const searchText = document.getElementById('search').value;
+        navigate(`/officer`);
+    }
+
     return (
         <div className="landing-container">
             <div className="blur">
@@ -24,6 +32,8 @@ function Landing() {
                     <div className="input-form">
                         <input id="search" type="text" aria-label="search" placeholder="State, City, Zip-Code" />
                     </div>
+                    <button className="search-btn" onClick={handleSearch}>Search</button>
+
                 </div>
 
             </div>
