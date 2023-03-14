@@ -10,7 +10,7 @@
 
 .nav-title{
     font-family: 'Dancing Script', cursive;
-    font-size: 2.2vw;
+    font-size: 2.5vh;
      width: 25vw;
      text-align: center;
      letter-spacing: 3px;
@@ -19,7 +19,7 @@
 }
 
 .nav-about-p{
-    font-size: 1.6vw;
+    font-size: 1.7vh;
     text-align: center;
     letter-spacing: 1.2px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -40,27 +40,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
 }
 
 .login button {
-    padding: 3% 7%;
-    border: 1px solid black;
-    border-radius: 50px;
+    padding: 1.5%;
+    border: none;
+    border-bottom: 1px solid transparent;
+    /* border-radius: 50px; */
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(35, 35, 35);
     background-color: transparent;
     cursor: pointer;
-    font-size: 1.5vw;
+    font-size: 1.9vh;
 }
 
 .login button:hover {
     color: rgb(211, 25, 25);
-    border: 1px solid rgb(211, 25, 25);
+    border-bottom: 1px solid rgb(211, 25, 25);
     color: rgb(41, 87, 167);
 }
 
 .login button:active {
-     transform: scale(1);
-     box-shadow: 0 0 10px rgb(243, 172, 172);
+ font-size: 1.7vh;
+ text-shadow: 1px 3px 20px rgb(207, 200, 200);
 }
