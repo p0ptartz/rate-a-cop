@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Department, Feedback, Location, User, } = require('../models');
-const { authMiddleware, signToken } = require ('../utils/auth');
+const { authMiddleware, signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -21,7 +21,7 @@ const resolvers = {
             return Department.find().sort({ createdAt: -1 });
         },
         // department: async (parent, { departmentId }) => {
-            // return Department.findOne({ _id: departmentId });
+        // return Department.findOne({ _id: departmentId });
         // }, 
         users: async () => {
             return User.find().sort({ createdAt: -1 })
@@ -54,6 +54,7 @@ const resolvers = {
         },
 
         addFeedback: async (parent, { review, rating }) => {
+            console.log("checking")
             const feedback = await Feedback.create({ review, rating });
             return feedback;
         },
