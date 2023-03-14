@@ -10,7 +10,7 @@ function Landing() {
         const response = await fetch(`/api/mapquest/${searchText}`)
         const data = await response.json()
         console.log(data);
-        // navigate(`/officer`);
+        navigate(`/officer`);
     }
 
     return (
