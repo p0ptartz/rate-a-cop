@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import {
   ADD_FEEDBACK,
@@ -10,11 +10,7 @@ import './Officers.css';
 import { useNavigate } from 'react-router-dom'
 
 function Officers() {
-  let navigate = useNavigate();
 
-  useEffect(() => {
-    navigate('/officer');
-  }, []);
 
   const [addFeedback] = useMutation(ADD_FEEDBACK);
   const [addDepartment] = useMutation(ADD_DEPARTMENT);
