@@ -24,8 +24,8 @@ const typeDefs = gql`
 
     type Feedback {
         _id: ID
-        review: String!
-        rating: Int!
+        review: String
+        rating: Int
     }
 
     type User {
