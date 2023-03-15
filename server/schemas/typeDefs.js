@@ -7,6 +7,7 @@ type Location {
     departments: String!
     officers: String!
     city: String!
+    searchQuery: String!
 }
 
     type Department {
@@ -61,7 +62,7 @@ type Location {
 
         addDepartment(name: String!): Department
 
-        addLocation(name: String!, departments: String!, officers: String!, city: String!): Location
+        addLocation(name: String!, departments: String!, officers: String!, city: String!, searchQuery: String!): Location
 
         removeFeedback: String!
     }

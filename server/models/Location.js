@@ -24,6 +24,10 @@ const locationSchema = new Schema({
         required: false,
         trim: true,
         unique: true
+    },
+    searchQuery: {
+        type: String,
+        required: false,
     }
 })
 

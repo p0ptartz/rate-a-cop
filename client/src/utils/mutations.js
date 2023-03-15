@@ -42,13 +42,14 @@ export const ADD_DEPARTMENT = gql`
 `;
 
 export const ADD_LOCATION = gql`
-  mutation AddLocation($name: String!, $departments: String!, $officers: String!, $city: String!) {
-    addLocation(name: $name, departments: $departments, officers: $officers, city: $city) {
+  mutation AddLocation($name: String!, $departments: String!, $officers: String!, $city: String!, $searchQuery: String!) {
+    addLocation(name: $name, departments: $departments, officers: $officers, city: $city, searchQuery: $searchQuery) {
       _id
       name
       departments
       officers
       city
+      searchQuery
     }
   }
 `;
