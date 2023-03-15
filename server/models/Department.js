@@ -1,11 +1,17 @@
 const { Schema, model } = require('mongoose');
 
 const departmentSchema = new Schema ({
-    department: {
+    name: {
         type: String,
         required: true,
         trim: true,
+    },
+    officers: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Officer',
     }
+]
 });
 
 const Department = model('Department', departmentSchema);

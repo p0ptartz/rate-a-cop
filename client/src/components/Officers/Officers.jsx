@@ -28,14 +28,14 @@ const Officers = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form...', officer);
+    console.log('Submitting form...', feedback, department, officer);
     await Promise.all([
-      // addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
-      // addDepartment({ variables: { name: department.name, officers: officer.name } }),
+      addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
+      addDepartment({ variables: { name: department.name } }),
       // addLocation({ variables: { name: location.name, departments: location.departments, officers: location.officers } }),
       addOfficer({ variables: { name: officer.name, position: officer.position, officerId: officer.id} })
     ]);
-    console.log('Form submitted', officer);
+    console.log('Form submitted', department);
   };
 
 

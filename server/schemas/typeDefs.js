@@ -57,9 +57,10 @@ const typeDefs = gql`
 
         addOfficer(name: String!, position: String, officerId: Int): Officer
 
-        addDepartment(name: String!, officers: String!): Department
+        addDepartment(name: String!): Department
 
         addLocation(name: String!, departments: String!, officers: String!): Location
+        
         removeFeedback: String!
     }
 `
