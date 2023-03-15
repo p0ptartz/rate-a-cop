@@ -71,7 +71,7 @@ function App() {
                         />
                         <Route
                             exact
-                            path="/location"
+                            path="/location/:city"
                             element={
                                 <Location />
                             }

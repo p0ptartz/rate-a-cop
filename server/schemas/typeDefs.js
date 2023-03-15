@@ -27,6 +27,7 @@ type Location {
         _id: ID
         review: String
         rating: Int
+        city: String
     }
 
     type User {
@@ -52,7 +53,7 @@ type Location {
     }
 
     type Mutation {
-        addFeedback(review: String!, rating: Int!): Feedback
+        addFeedback(review: String!, rating: Int!, city: String): Feedback
 
         addUser(username: String!, password: String!): User
 

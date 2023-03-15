@@ -6,6 +6,7 @@ export const GET_FEEDBACKS = gql`
       _id
       review
       rating
+      city
     }
   }
 `;
@@ -60,7 +61,7 @@ query GetDepartmentByID($departmenId: ID!) {
 }
 `;
 
-export const GET_OFFICERS = gql `
+export const GET_OFFICERS = gql`
   query GetOfficers {
     officers {
       name
@@ -72,7 +73,7 @@ export const GET_OFFICERS = gql `
       }
     }
   }`
-;
+  ;
 
 export const GET_OFFICERS_BY_ID = gql`
 query GetOfficerByID($officerId: Int!) {
@@ -86,4 +87,4 @@ query GetOfficerByID($officerId: Int!) {
     }
   }
 }`
-;
+  ;

@@ -29,7 +29,7 @@ function Landing() {
             country: city.adminArea1
           }
         });
-        navigate(`/location`);
+        navigate(`/location/${city.adminArea5}`);
       } catch (e) {
         console.error(e);
       }
@@ -37,7 +37,7 @@ function Landing() {
       console.log("No results found.");
     }
   }
-  
+
 
   useEffect(() => {
     // Initialize Place Search widget
