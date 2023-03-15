@@ -27,13 +27,14 @@ function Officers() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form...', feedback, department, location);
+    console.log('Submitting form...', officer);
     await Promise.all([
       addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
       addDepartment({ variables: { name: department.name, officers: department.officers } }),
       addLocation({ variables: { name: location.name, departments: location.departments, officers: location.officers } }),
+      addOfficer({ variables: { name: officer.name, position: officer.position, officerId: officer.id} })
     ]);
-    console.log('Form submitted', feedback, department, location);
+    console.log('Form submitted', officer);
   };
 
 
@@ -71,10 +72,22 @@ function Officers() {
                 onChange={(e) => setDepartment({ ...department, name: e.target.value })} />
             </div>
             <div className="input-container">
-              <label htmlFor="department-officers-input">Department Officers:</label>
+              <label htmlFor="department-officers-input">Officer Name:</label>
               <input type="text" id="department-officers-input"
-                value={department.officers}
-                onChange={(e) => setDepartment({ ...department, officers: e.target.value })} />
+                value={officer.name}
+                onChange={(e) => setOfficer({ ...officer, name: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="department-officers-input">Officer's Position:</label>
+              <input type="text" id="officers-position-input"
+                value={officer.position}
+                onChange={(e) => setOfficer({ ...officer, position: e.target.value })} />
+            </div>
+            <div className="input-container">
+              <label htmlFor="department-officers-input">Officer's ID:</label>
+              <input type="text" id="officers-id-input"
+                value={officer.id}
+                onChange={(e) => setOfficer({ ...officer, officerId: e.target.value })} />
             </div>
             <div className="input-container">
               <label htmlFor="location-name-input">Location Name:</label>

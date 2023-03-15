@@ -21,13 +21,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_OFFICER = gql`
-  mutation AddOfficer($name: String!, $position: String!, $officerId: Int!, $ratings: String!) {
-    addOfficer(name: $name, position: $position, officerId: $officerId, ratings: $ratings) {
+  mutation AddOfficer($name: String!, $position: String, $officerId: Int) {
+    addOfficer(name: $name, position: $position, officerId: $officerId) {
       _id
       name
       position
       officerId
-      ratings
     }
   }
 `;

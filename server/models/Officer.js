@@ -8,17 +8,17 @@ const officerSchema = new Schema({
     },
     position: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     officerId: {
         type: Number,
-        required: true,
+        required: false,
         trim: true,
     },
     ratings: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     }
 });

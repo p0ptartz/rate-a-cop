@@ -72,7 +72,13 @@ const resolvers = {
                 name, departments, officers
             })
             return location
-        }
+        },
+        addOfficer: async(parent, { name, position, officerId }) => {
+            const officer = await Officer.create({
+                name, position, officerId
+            })
+            return officer
+        },
 
     }
 }
