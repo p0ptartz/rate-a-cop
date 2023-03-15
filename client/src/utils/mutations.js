@@ -21,13 +21,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_OFFICER = gql`
-  mutation AddOfficer($name: String!, $position: String!, $officerId: Int!, $ratings: String!) {
-    addOfficer(name: $name, position: $position, officerId: $officerId, ratings: $ratings) {
+  mutation AddOfficer($name: String!, $position: String, $officerId: Int) {
+    addOfficer(name: $name, position: $position, officerId: $officerId) {
       _id
       name
       position
       officerId
-      ratings
     }
   }
 `;
@@ -57,6 +56,18 @@ export const REMOVE_FEEDBACK = gql`
   mutation RemoveFeedback($feedbackId: ID!) {
     removeFeedback(feedbackId: $feedbackId) {
       _id
+    }
+  }
+`;
+
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
     }
   }
 `;

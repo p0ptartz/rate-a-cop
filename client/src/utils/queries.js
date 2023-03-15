@@ -59,3 +59,31 @@ query GetDepartmentByID($departmenId: ID!) {
     }
 }
 `;
+
+export const GET_OFFICERS = gql `
+  query GetOfficers {
+    officers {
+      name
+      officerId
+      position
+      ratings {
+        rating
+        review
+      }
+    }
+  }`
+;
+
+export const GET_OFFICERS_BY_ID = gql`
+query GetOfficerByID($officerId: Int!) {
+  officer(officerId: $officerId) {
+    name
+    officerId
+    position
+    ratings {
+      rating
+      review
+    }
+  }
+}`
+;

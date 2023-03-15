@@ -5,21 +5,21 @@ const typeDefs = gql`
         _id: ID
         name: String!
         departments: String!
-        officers: String!
+        officers: [Officer]
     }
 
     type Department {
         _id: ID
         name: String!
-        officers: String!
+        officers: [Officer]
     }
 
     type Officer {
         _id: ID
         name: String!
-        position: String!
+        position: String
         officerId: Int
-        ratings: String!
+        ratings: [Feedback]
     }
 
     type Feedback {
@@ -46,13 +46,19 @@ const typeDefs = gql`
         users: [User]
         locations: [Location]
         departments: [Department]
+        officers: [Officer]
+        officer(officerId: Int!): Officer
     }
 
     type Mutation {
         addFeedback(review: String!, rating: Int!): Feedback
+
         addUser(username: String!, password: String!): User
-        addOfficer(name: String!, position: String!, officerId: Int, ratings: String!): Officer
+
+        addOfficer(name: String!, position: String, officerId: Int): Officer
+
         addDepartment(name: String!, officers: String!): Department
+
         addLocation(name: String!, departments: String!, officers: String!): Location
         removeFeedback: String!
     }
