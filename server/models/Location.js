@@ -12,12 +12,12 @@ const locationSchema = new Schema({
         required: false,
         trim: true,
     },
-    officers: [
+    officers: 
         {
-            type: Schema.Types.ObjectId,
-            ref: "Officer"
-        }
-    ],
+            type: String,
+            ref: "Officer",
+            required: false
+        },
     city: {
         type: String,
         required: false,
