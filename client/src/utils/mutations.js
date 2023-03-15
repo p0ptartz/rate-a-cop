@@ -43,17 +43,15 @@ export const ADD_DEPARTMENT = gql`
 `;
 
 export const ADD_LOCATION = gql`
-  mutation AddLocation($name: String!, $departments: String!, $officers: String!, $city: String!) {
-    addLocation(name: $name, departments: $departments, officers: $officers, city: $city) {
+  mutation AddLocation($name: String!, $departments: String!, $officers: String!) {
+    addLocation(name: $name, departments: $departments, officers: $officers) {
       _id
       name
       departments
       officers
-      city
     }
   }
 `;
-
 
 export const REMOVE_FEEDBACK = gql`
   mutation RemoveFeedback($feedbackId: ID!) {
