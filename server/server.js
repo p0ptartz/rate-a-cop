@@ -24,17 +24,11 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
-app.get('/api/mapquest/:searchText', async(req, res) => {
+app.get('/api/mapquest/:searchText', async (req, res) => {
   const response = await fetch(`https://www.mapquestapi.com/search/v2/radius?origin=${req.params.searchText}&radius=0.15&maxMatches=3&ambiguities=allow&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=${process.env.MAP_API}`)
   const data = await response.json()
   res.json(data)
 })
-// app.get("*", (req, res) => {
-//   let url = path.join(__dirname, '../client/build', 'index.html');
-//   if (!url.startsWith('/app/')) // we're on local windows
-//     url = url.substring(1);
-//   res.sendFile(url);
-// });
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
