@@ -3,7 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import "./location.css";
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_FEEDBACKS } from "../../utils/queries"
+
 import frownIcon from "./frown.png";
+
+import Feedback from '../Feedback/Feedback';
+
 
 
 function Location({ }) {
@@ -11,6 +15,7 @@ function Location({ }) {
     const { loading, error, data } = useQuery(GET_FEEDBACKS)
     const [showFeedbacks, setShowFeedbacks] = useState(false);
     const [showAddOfficer, setShowAddOfficer] = useState(false);
+
     const filteredFeedback = loading ? [] : data.feedbacks.filter((feedback) => feedback?.city == city);
     const filteredAverage = loading ? "-" :
         filteredFeedback.length == 0 ? "-" :
@@ -22,6 +27,10 @@ function Location({ }) {
             filteredAverage > 3 ? "https://em-content.zobj.net/thumbs/120/microsoft/319/shamrock_2618-fe0f.png" :
                 frownIcon
 
+    const [location, setLocation] = useState("Philly")
+    const [feedbackForm, setFeedbackForm] = useState(false)
+
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
@@ -31,8 +40,16 @@ function Location({ }) {
     }
 
     const handleAddOfficerClick = () => {
+        setLocation(defaultLocation.name);
         setShowAddOfficer(true);
     }
+
+    const defaultLocation = {name: "Atlanta", state: "GA"}
+
+    const handleLinkOfficersClick = () => {
+        setLocation(defaultLocation.name);
+        setFeedbackForm(true)
+    }    
 
     return (
         <div>
@@ -93,7 +110,7 @@ function Location({ }) {
                             <button onClick={() => setShowAddOfficer(false)}>X</button>
                         </div>
                         <div className="add-officer-content">
-                            {/* {put form data here} */}
+                            <Feedback place={location}/>
                         </div>
                     </div>
                 </section>

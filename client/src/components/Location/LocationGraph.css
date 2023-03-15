@@ -1,0 +1,8 @@
+.location-graph{
+    min-height: 50vh;
+    width: 40vw;
+    background-image: url(./bargraph.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
