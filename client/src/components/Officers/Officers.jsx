@@ -28,7 +28,7 @@ const Officers = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form...', department);
+    console.log('Submitting form...', feedback, department, officer);
     await Promise.all([
       addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
       addDepartment({ variables: { name: department.name } }),
