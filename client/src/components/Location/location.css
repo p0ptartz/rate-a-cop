@@ -100,6 +100,7 @@ font-size: 3vh
     height: 8vh;
     border: none;
     color: white;
+    font-size: 2vh;
 }
 
 .add-officer {
@@ -131,6 +132,7 @@ font-size: 3vh
     height: 20vh;
     border: 1px solid red;
     display: flex;
+    margin: 1% 0;
     /* flex-direction: column; */
 }
 
@@ -138,6 +140,7 @@ font-size: 3vh
     width: 15vw;
     height: 20vh;
     border: 1px solid purple;
+    padding: 2%;
 }
 
 .feedback-review{
@@ -145,4 +148,5 @@ font-size: 3vh
     height: 20vh;
     border: 1px solid green;
     margin-left: 1%;
+    padding: 2%;
 }

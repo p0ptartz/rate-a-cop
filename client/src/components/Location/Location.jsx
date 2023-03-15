@@ -8,9 +8,13 @@ import { GET_FEEDBACKS } from "../../utils/queries"
 function Location() {
 
     const { loading, error, data } = useQuery(GET_FEEDBACKS)
+    const [showFeedbacks, setShowFeedbacks] = useState(false)
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
+    const handleViewOfficersClick = () => {
+        setShowFeedbacks(true);
+    }
 
     return (
         <div>
@@ -35,7 +39,7 @@ function Location() {
                     </div>
                     <div className="location-btn-container">
                         <button className="add-officer">ADD AN OFFICER</button>
-                        <button className="view-officer">VIEW OFFICERS</button>
+                        <button className="view-officer" onClick={handleViewOfficersClick}>VIEW OFFICERS</button>
                     </div>
                 </section>
                 <section className="location-graph-container">
@@ -46,21 +50,23 @@ function Location() {
                 </section>
 
             </section>
-            <section className='get-feedback-container'>
-                {
-                    data.feedbacks.map((feedback) => (
-                        <section className="get-feedback">
-                            <div className="feedback-user">
+            {showFeedbacks && // render feedbacks section only when showFeedbacks state is true
+                <section className='get-feedback-container'>
+                    {
+                        data.feedbacks.map((feedback) => (
+                            <section className="get-feedback">
+                                <div className="feedback-user">
+                                    {feedback.rating}
+                                </div>
+                                <div className="feedback-review">
+                                    {feedback.review}
+                                </div>
+                            </section>
 
-                            </div>
-                            <div className="feedback-review">
-                                {feedback.review} - {feedback.rating}
-                            </div>
-                        </section>
-
-                    ))
-                }
-            </section>
+                        ))
+                    }
+                </section>
+            }
         </div>
 
     );
