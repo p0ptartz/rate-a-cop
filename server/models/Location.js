@@ -8,12 +8,17 @@ const locationSchema = new Schema({
     },
     departments: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     officers: {
         type: String,
-        required: true,
+        required: false,
+        trim: true
+    }, 
+    city: {
+        type: String,
+        required: false,
         trim: true
     }
 })

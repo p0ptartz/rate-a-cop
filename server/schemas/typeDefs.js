@@ -6,6 +6,7 @@ const typeDefs = gql`
         name: String!
         departments: String!
         officers: String!
+        city: String!
     }
 
     type Department {
@@ -53,7 +54,7 @@ const typeDefs = gql`
         addUser(username: String!, password: String!): User
         addOfficer(name: String!, position: String!, officerId: Int, ratings: String!): Officer
         addDepartment(name: String!, officers: String!): Department
-        addLocation(name: String!, departments: String!, officers: String!): Location
+        addLocation(name: String!, departments: String!, officers: String!, city: String!): Location
         removeFeedback: String!
     }
 `
