@@ -32,11 +32,10 @@ export const ADD_OFFICER = gql`
 `;
 
 export const ADD_DEPARTMENT = gql`
-  mutation AddDepartment($name: String!, $officers: String!) {
-    addDepartment(name: $name, officers: $officers) {
+  mutation AddDepartment($name: String!) {
+    addDepartment(name: $name) {
       _id
       name
-      officers
     }
   }
 `;

@@ -79,6 +79,12 @@ const resolvers = {
             })
             return officer
         },
+        addDepartment: async(parent, { name }) => {
+            const department = await Department.create({
+                name
+            })
+            return department
+        }
 
     }
 }
