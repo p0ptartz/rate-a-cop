@@ -1,49 +1,80 @@
-import React from "react";
-import "./landing.css"
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import "./landing.css";
+import { useNavigate } from "react-router-dom";
 
 function Landing() {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    async function handleSearch() {
-        const searchText = document.getElementById('search').value;
-        const response = await fetch(`/api/mapquest/${searchText}`)
-        const data = await response.json()
-        console.log(data);
-        navigate(`/officer`);
-    }
+  async function handleSearch() {
+    const searchText = document.getElementById("place-search-input").value;
+    const response = await fetch(`/api/mapquest/${searchText}`);
+    const data = await response.json();
+    console.log(data);
+    navigate(`/officer`);
+  }
 
-    return (
-        <div className="landing-container">
-            <div className="blur">
-                <div className="title">
-                    <div className="title-1">
-                        <p>RATE</p>
-                    </div>
-                    <div className="title-2">
-                        <p>A COP</p>
-                    </div>
-                </div>
-                <div className="start">
-                    <p>GET STARTED:</p>
-                </div>
-                <div className="direction-container">
+  useEffect(() => {
+    // Initialize Place Search widget
+    const script = document.createElement("script");
+    script.src =
+      "https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-                    <div className="directions">
-                        <p>Search by State, City, or Zip-code</p>
-                    </div>
-                    <div className="input-form">
-                        <input id="search" type="text" aria-label="search" placeholder="State, City, Zip-Code" />
-                    </div>
-                    <button className="search-btn" onClick={handleSearch}>Search</button>
+    const link = document.createElement("link");
+    link.href =
+      "https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css";
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
 
-                </div>
+    script.onload = () => {
+      const input = document.getElementById("place-search-input");
+      window.placeSearch({
+        key: "eUGo5JTnLcTCgEECYxeQk2DgTECbXSHm",
+        container: input,
+        collection: ["address", "adminArea"],
+        options: {
+          maxResults: 5,
+        },
+      });
+    };
+  }, []);
 
-            </div>
-
+  return (
+    <div className="landing-container">
+      <div className="blur">
+        <div className="title">
+          <div className="title-1">
+            <p>RATE</p>
+          </div>
+          <div className="title-2">
+            <p>A COP</p>
+          </div>
         </div>
-    )
-
+        <div className="start">
+          <p>GET STARTED:</p>
+        </div>
+        <div className="direction-container">
+          <div className="directions">
+            <p>Search by State, City, or Zip-code</p>
+          </div>
+          <div className="input-form">
+            <input
+              id="place-search-input"
+              type="search"
+              aria-label="search"
+              placeholder="State, City, Zip-Code"
+            />
+          </div>
+          <button className="search-btn" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Landing;
+
