@@ -11,7 +11,12 @@ import {
 import './Officers.css';
 
 
-function Officers() {
+const Officers = () => {
+
+  const [feedback, setFeedback] = useState({ review: '', rating: 0 });
+  const [department, setDepartment] = useState({ name: '', officers: '' });
+  const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
+  const [officer, setOfficer] = useState({ name: '', position: '', officerId: '' })
 
 
   const [addFeedback] = useMutation(ADD_FEEDBACK);
@@ -20,18 +25,14 @@ function Officers() {
   const [addOfficer] = useMutation(ADD_OFFICER);
 
 
-  const [feedback, setFeedback] = useState({ review: '', rating: 0 });
-  const [department, setDepartment] = useState({ name: '', officers: '' });
-  const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
-  const [officer, setOfficer] = useState({ name: '', position: '', officerId: '' })
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitting form...', officer);
     await Promise.all([
-      addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
-      addDepartment({ variables: { name: department.name, officers: department.officers } }),
-      addLocation({ variables: { name: location.name, departments: location.departments, officers: location.officers } }),
+      // addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
+      // addDepartment({ variables: { name: department.name, officers: officer.name } }),
+      // addLocation({ variables: { name: location.name, departments: location.departments, officers: location.officers } }),
       addOfficer({ variables: { name: officer.name, position: officer.position, officerId: officer.id} })
     ]);
     console.log('Form submitted', officer);
@@ -72,8 +73,8 @@ function Officers() {
                 onChange={(e) => setDepartment({ ...department, name: e.target.value })} />
             </div>
             <div className="input-container">
-              <label htmlFor="department-officers-input">Officer Name:</label>
-              <input type="text" id="department-officers-input"
+              <label htmlFor="officer-name-input">Officer Name:</label>
+              <input type="text" id="officer-name-input"
                 value={officer.name}
                 onChange={(e) => setOfficer({ ...officer, name: e.target.value })} />
             </div>
