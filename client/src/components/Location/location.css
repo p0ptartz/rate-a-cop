@@ -117,3 +117,32 @@ font-size: 3vh
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+
+.get-feedback-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get-feedback {
+    width: 80vw;
+    height: 20vh;
+    border: 1px solid red;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.feedback-user {
+    width: 15vw;
+    height: 20vh;
+    border: 1px solid purple;
+}
+
+.feedback-review{
+    width: 55vw;
+    height: 20vh;
+    border: 1px solid green;
+    margin-left: 1%;
+}
