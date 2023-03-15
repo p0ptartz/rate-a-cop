@@ -1,0 +1,65 @@
+.officer-container{
+    height: 80vh;
+    width: 100vw;
+    border: 1px solid red;
+}
+
+.officer-rating {
+    width: 100vw;
+    height: 50vh;
+    border: 1px solid purple;
+    display: flex;
+    justify-content: center;
+}
+
+.officer-stats-container {
+    height: 50vh;
+    width: 35vw;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.officer-stats{
+    height: 45vh;
+    width: 35vw;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.officer-name {
+    width: 35vw;
+    font-size: 3vw;
+}
+
+.officer-ratings{
+    width: 35vw;
+    font-size: 3.5vw;
+    height: 7vh;
+    border: 1px solid brown;
+}
+
+.review {
+    height: 30vh;
+    width: 35vw;
+    border: 1px solid pink;
+}
+
+
+
+.graph-container{
+    height: 50vh;
+    width: 55vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+}
+
+.graph-body{
+height: 45vh;
+width: 45vw;
+border: 1px solid green;
+}

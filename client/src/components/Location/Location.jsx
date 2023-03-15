@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import "./location.css";
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_FEEDBACKS } from "../../utils/queries"
+import Feedback from '../Feedback/Feedback';
 
 function Location() {
     const { loading, error, data } = useQuery(GET_FEEDBACKS)
     const [showFeedbacks, setShowFeedbacks] = useState(false);
     const [showAddOfficer, setShowAddOfficer] = useState(false);
+    const [location, setLocation] = useState("Philly")
+    const [feedbackForm, setFeedbackForm] = useState(false)
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
@@ -17,8 +20,16 @@ function Location() {
     }
 
     const handleAddOfficerClick = () => {
+        setLocation(defaultLocation.name);
         setShowAddOfficer(true);
     }
+
+    const defaultLocation = {name: "Atlanta", state: "GA"}
+
+    const handleLinkOfficersClick = () => {
+        setLocation(defaultLocation.name);
+        setFeedbackForm(true)
+    }    
 
     return (
         <div>
@@ -78,7 +89,7 @@ function Location() {
                             <button onClick={() => setShowAddOfficer(false)}>X</button>
                         </div>
                         <div className="add-officer-content">
-                            {/* {put form data here} */}
+                            <Feedback place={location}/>
                         </div>
                     </div>
                 </section>
