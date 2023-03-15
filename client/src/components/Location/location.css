@@ -5,24 +5,34 @@
     justify-content: space-evenly;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 
 .location-overall{
     height: 60vh;
-    width: 40vw;
+    width: 45vw;
     
     background-color: rgba(232, 232, 232, 0.586);
 }
 
 .location-graph-container {
     height: 60vh;
-    width: 50vw;
+    width: 45vw;
     
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(232, 232, 232, 0.586);
 }
+
+.location-graph{
+    min-height: 50vh;
+    width: 40vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
 
 .location-name-container {
     width: 40vw;
@@ -110,14 +120,6 @@ font-size: 3vh
 .view-officer {
     background-color: rgb(183, 11, 11);
 }
-.location-graph{
-    min-height: 50vh;
-    width: 40vw;
-    background-image: url(./bargraph.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
 
 .get-feedback-container {
     width: 100vw;
@@ -149,4 +151,26 @@ font-size: 3vh
     border: 1px solid green;
     margin-left: 1%;
     padding: 2%;
+}
+
+.add-officer-backdrop{
+    background-color: rgba(0, 0, 0, 0.441);
+    width: 100vw;
+    height: 100vh;
+      position: fixed;
+  top: 50%;
+  left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.add-officer-page {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 3;
+  padding: 20px;
+  width:45vw;
+  height: 70vh;
 }
