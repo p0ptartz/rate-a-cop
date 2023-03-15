@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 app.get('/api/mapquest/:searchText', async (req, res) => {
-  const response = await fetch(`https://www.mapquestapi.com/search/v2/radius?origin=${req.params.searchText}&radius=0.15&maxMatches=3&ambiguities=allow&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=${process.env.MAP_API}`)
+  const response = await fetch(`https://www.mapquestapi.com/geocoding/v1/address?key=${process.env.MAP_API}&inFormat=json&outFormat=json&json={"location":{"street":"${req.params.searchText}"},"options":{"thumbMaps":false}}`)
   const data = await response.json()
   res.json(data)
 })
