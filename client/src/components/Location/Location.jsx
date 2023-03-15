@@ -4,16 +4,20 @@ import "./location.css";
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_FEEDBACKS } from "../../utils/queries"
 
-
 function Location() {
-
     const { loading, error, data } = useQuery(GET_FEEDBACKS)
-    const [showFeedbacks, setShowFeedbacks] = useState(false)
+    const [showFeedbacks, setShowFeedbacks] = useState(false);
+    const [showAddOfficer, setShowAddOfficer] = useState(false);
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
     const handleViewOfficersClick = () => {
         setShowFeedbacks(true);
+    }
+
+    const handleAddOfficerClick = () => {
+        setShowAddOfficer(true);
     }
 
     return (
@@ -38,7 +42,7 @@ function Location() {
                         </div>
                     </div>
                     <div className="location-btn-container">
-                        <button className="add-officer">ADD AN OFFICER</button>
+                        <button className="add-officer" onClick={handleAddOfficerClick}>ADD AN OFFICER</button>
                         <button className="view-officer" onClick={handleViewOfficersClick}>VIEW OFFICERS</button>
                     </div>
                 </section>
@@ -67,17 +71,21 @@ function Location() {
                     }
                 </section>
             }
-        </div>
+            {showAddOfficer &&
+                <section className="add-officer-backdrop">
+                    <div className="add-officer-page">
+                        <div className="add-officer-header">
+                            <button onClick={() => setShowAddOfficer(false)}>X</button>
+                        </div>
+                        <div className="add-officer-content">
+                            {/* {put form data here} */}
+                        </div>
+                    </div>
+                </section>
 
+            }
+        </div>
     );
 }
 
 export default Location;
-
-// {
-//     data.feedbacks.map((feedback) => (
-//         <div key={feedback._id} className="feedback-review">
-//             {feedback.review} - {feedback.rating}
-//         </div>
-//     ))
-// }
