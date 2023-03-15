@@ -1,17 +1,43 @@
 import React, { useEffect } from "react";
 import "./landing.css";
 import { useNavigate } from "react-router-dom";
+import { ADD_LOCATION } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
+
 
 function Landing() {
   const navigate = useNavigate();
+  const [addLocation] = useMutation(ADD_LOCATION);
 
   async function handleSearch() {
     const searchText = document.getElementById("place-search-input").value;
     const response = await fetch(`/api/mapquest/${searchText}`);
     const data = await response.json();
     console.log(data);
-    navigate(`/officer`);
+    if (data.results && data.results[0] && data.results[0].locations.length > 0) {
+      const city = data.results[0].locations[0];
+      console.log(city);
+      try {
+        await addLocation({
+          variables: {
+            name: city.adminArea5,
+            departments: "",
+            officers: "",
+            searchQuery: searchText,
+            city: city.adminArea5,
+            state: city.adminArea3,
+            country: city.adminArea1
+          }
+        });
+        navigate(`/officer`);
+      } catch (e) {
+        console.error(e);
+      }
+    } else {
+      console.log("No results found.");
+    }
   }
+  
 
   useEffect(() => {
     // Initialize Place Search widget

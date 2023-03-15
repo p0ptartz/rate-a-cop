@@ -1,24 +1,30 @@
 const { Schema, model } = require('mongoose');
 
+
 const locationSchema = new Schema({
     name: {
         type: String,
         required: true,
         trim: true,
     },
-    departments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Department',
+    departments: {
+        type: String,
+        required: false,
+        trim: true,
+    },
+    officers: {
+        type: String,
+        required: false,
+        trim: true
+    }, 
+    city: {
+        type: String,
+        required: false,
+        trim: true
     }
-],
-    officers: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Officer',
-    }
-]
 })
+
+
 
 const Location = model("Location", locationSchema)
 
