@@ -8,7 +8,9 @@ import Landing from "./components/Landing/Landing";
 import Login from "./components/Login/Login";
 import Officers from "./components/Officers/Officers";
 import Location from "./components/Location/Location";
-import AddOfficerPage from "./components/AddOfficerPage/AddOfficerPage";
+
+import About from "./components/About/about";
+
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -56,7 +58,7 @@ function App() {
 
                                     <Landing />
                                     {isLoginOpen && <Login onCloseClick={handleCloseClick} />}
-
+                                    <About />
                                 </>
                             }
                         />
