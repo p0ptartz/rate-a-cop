@@ -26,10 +26,10 @@ const resolvers = {
         users: async () => {
             return User.find().sort({ createdAt: -1 })
         },
-        officers: async()=> {
+        officers: async () => {
             return Officer.find().sort({ createdAt: -1 });
         },
-        officer: async(parent, { officerId })=> {
+        officer: async (parent, { officerId }) => {
             return Officer.findOne({ officerId: officerId });
         }
 
@@ -61,12 +61,10 @@ const resolvers = {
         },
 
 
-        // addFeedback: async (parent, { review, rating }) => {
-        //     console.log("checking")
-        //     const feedback = await Feedback.create({ review, rating });
-        //     // after creating new feedback, take ID # and add to user's feedback array !!!
-        //     return feedback;
-        // },
+        addFeedback: async (parent, { review, rating, city }) => {
+
+            const feedback = await Feedback.create({ review, rating, city });
+
 
         addFeedback: async (parent, { review, rating, officerId }, context) => {
             if (context.user) {
@@ -93,13 +91,13 @@ const resolvers = {
             return location
         },
 
-        addOfficer: async(parent, { name, position, officerId }) => {
+        addOfficer: async (parent, { name, position, officerId }) => {
             const officer = await Officer.create({
                 name, position, officerId
             })
             return officer
         },
-        addDepartment: async(parent, { name }) => {
+        addDepartment: async (parent, { name }) => {
             const department = await Department.create({
                 name
             })

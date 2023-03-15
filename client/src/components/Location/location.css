@@ -90,7 +90,7 @@ font-size: 3vh
 .location-icon{
     height: 17vh;
     width: 13vw;
-    background-image: url(./frown.png);
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 30%;
