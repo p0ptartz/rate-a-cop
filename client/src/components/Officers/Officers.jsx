@@ -5,6 +5,7 @@ import {
   ADD_FEEDBACK,
   ADD_DEPARTMENT,
   ADD_LOCATION,
+  ADD_OFFICER,
 
 } from '../../utils/mutations';
 import './Officers.css';
@@ -16,11 +17,13 @@ function Officers() {
   const [addFeedback] = useMutation(ADD_FEEDBACK);
   const [addDepartment] = useMutation(ADD_DEPARTMENT);
   const [addLocation] = useMutation(ADD_LOCATION);
+  const [addOfficer] = useMutation(ADD_OFFICER);
 
 
   const [feedback, setFeedback] = useState({ review: '', rating: 0 });
   const [department, setDepartment] = useState({ name: '', officers: '' });
   const [location, setLocation] = useState({ name: '', departments: '', officers: '' });
+  const [officer, setOfficer] = useState({ name: '', position: '', officerId: '' })
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

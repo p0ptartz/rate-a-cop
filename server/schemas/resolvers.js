@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Department, Feedback, Location, User, } = require('../models');
+const { Department, Feedback, Location, User, Officer } = require('../models');
 const { authMiddleware, signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -25,7 +25,14 @@ const resolvers = {
         // }, 
         users: async () => {
             return User.find().sort({ createdAt: -1 })
+        },
+        officers: async()=> {
+            return Officer.find().sort({ createdAt: -1 });
+        },
+        officer: async(parent, { officerId })=> {
+            return Officer.findOne({ officerId: officerId });
         }
+
 
     },
 
