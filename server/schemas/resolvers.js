@@ -67,9 +67,9 @@ const resolvers = {
 
             return feedback;
         },
-        addLocation: async (parent, { name, departments, officers }) => {
+        addLocation: async (parent, { name }) => {
             const location = await Location.create({
-                name, departments, officers
+                name
             })
             return location
         },

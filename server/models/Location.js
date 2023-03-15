@@ -6,16 +6,18 @@ const locationSchema = new Schema({
         required: true,
         trim: true,
     },
-    departments: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    officers: {
-        type: String,
-        required: true,
-        trim: true
+    departments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Department',
     }
+],
+    officers: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Officer',
+    }
+]
 })
 
 const Location = model("Location", locationSchema)

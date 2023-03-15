@@ -28,14 +28,14 @@ const Officers = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form...', feedback, department, officer);
+    console.log('Submitting form...', feedback, department, officer,location);
     await Promise.all([
       addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
       addDepartment({ variables: { name: department.name } }),
-      // addLocation({ variables: { name: location.name, departments: location.departments, officers: location.officers } }),
+      addLocation({ variables: { name: location.name } }),
       addOfficer({ variables: { name: officer.name, position: officer.position, officerId: officer.id} })
     ]);
-    console.log('Form submitted', department);
+    console.log('Form submitted', location);
   };
 
 
@@ -100,14 +100,16 @@ const Officers = () => {
             <div className="input-container">
               <label htmlFor="location-departments-input">Location Departments:</label>
               <input type="text" id="location-departments-input"
-                value={location.departments}
-                onChange={(e) => setLocation({ ...location, departments: e.target.value })} />
+                // value={location.departments}
+                // onChange={(e) => setLocation({ ...location, departments: e.target.value })}
+                 />
             </div>
             <div className="input-container">
               <label htmlFor="location-officers-input">Location Officers:</label>
               <input type="text" id="location-officers-input"
-                value={location.officers}
-                onChange={(e) => setLocation({ ...location, officers: e.target.value })} />
+                // value={location.officers}
+                // onChange={(e) => setLocation({ ...location, officers: e.target.value })}
+                 />
             </div>
             <div className="btn-container">
               <button className='submit-btn' onClick={handleFormSubmit}>Submit</button>
