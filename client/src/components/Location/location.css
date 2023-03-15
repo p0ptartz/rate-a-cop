@@ -164,6 +164,7 @@ font-size: 3vh
 }
 
 .add-officer-page {
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -171,6 +172,6 @@ font-size: 3vh
   background-color: white;
   z-index: 3;
   padding: 20px;
-  width:45vw;
-  height: 70vh;
+  width:65vw;
+  height: 60vh;
 }
