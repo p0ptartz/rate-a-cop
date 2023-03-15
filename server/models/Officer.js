@@ -20,7 +20,14 @@ const officerSchema = new Schema({
         type: String,
         required: false,
         trim: true,
-    }
+    },
+    feedbackList: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Feedback',
+        }
+    ]
+    
 });
 
 const Officer = model('Officer', officerSchema);

@@ -20,7 +20,8 @@ type Location {
         name: String!
         position: String
         officerId: Int
-        ratings: [Feedback]
+        ratings: [String!]
+        feedbackList: [Feedback]
     }
 
     type Feedback {
@@ -52,7 +53,7 @@ type Location {
     }
 
     type Mutation {
-        addFeedback(review: String!, rating: Int!): Feedback
+        addFeedback(review: String!, rating: Int!, officerId: ID! ): Feedback
 
         addUser(username: String!, password: String!): Auth
 

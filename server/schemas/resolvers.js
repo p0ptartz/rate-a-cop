@@ -68,7 +68,7 @@ const resolvers = {
         //     return feedback;
         // },
 
-        addFeedback: async (parent, { review, rating }, context) => {
+        addFeedback: async (parent, { review, rating, officerId }, context) => {
             if (context.user) {
               const feedback = await Feedback.create({
                 review, rating});
@@ -77,8 +77,12 @@ const resolvers = {
                 { _id: context.user._id },
                 { $addToSet: { ratings: feedback._id } }
               );
-    //   add connection to officer here for array of feedback - using find one and update away
-              return feedback;
+    //   added connection to officer here for array of feedback - using find one and update away
+              await Officer.findOneAndUpdate(
+                { _id: officerId},
+                { $addToSet: { feedbackList: feedback._id } }
+              )
+            return feedback;
             }
             throw new AuthenticationError('You need to be logged in!');
           },
