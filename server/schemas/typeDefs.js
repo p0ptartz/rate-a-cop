@@ -5,7 +5,7 @@ type Location {
     _id: ID
     name: String!
     departments: String!
-    officers: String!
+    officers: [Officer]
     city: String!
 }
 
