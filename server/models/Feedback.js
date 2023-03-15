@@ -9,6 +9,10 @@ const feedbackSchema = new Schema({
     rating: {
         type: Number,
         required: false,
+    },
+    city: {
+        type: String,
+        ref: "Location",
     }
 });
 

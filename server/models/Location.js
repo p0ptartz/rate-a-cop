@@ -6,22 +6,24 @@ const locationSchema = new Schema({
         type: String,
         required: true,
         trim: true,
+        unique: true
     },
     departments: {
         type: String,
         required: false,
         trim: true,
     },
-    officers: 
-        {
-            type: String,
-            ref: "Officer",
-            required: false
-        },
+    officers:
+    {
+        type: String,
+        ref: "Officer",
+        required: false
+    },
     city: {
         type: String,
         required: false,
-        trim: true
+        trim: true,
+        unique: true
     }
 })
 
