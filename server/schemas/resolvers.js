@@ -61,12 +61,27 @@ const resolvers = {
         },
 
 
-        addFeedback: async (parent, { review, rating }) => {
-            console.log("checking")
-            const feedback = await Feedback.create({ review, rating });
+        // addFeedback: async (parent, { review, rating }) => {
+        //     console.log("checking")
+        //     const feedback = await Feedback.create({ review, rating });
+        //     // after creating new feedback, take ID # and add to user's feedback array !!!
+        //     return feedback;
+        // },
 
-            return feedback;
-        },
+        addFeedback: async (parent, { review, rating }, context) => {
+            if (context.user) {
+              const feedback = await Feedback.create({
+                review, rating});
+      
+              await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: { ratings: feedback._id } }
+              );
+    //   add connection to officer here for array of feedback - using find one and update away
+              return feedback;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
         addLocation: async (parent, { name, departments, officers, city, searchQuery }) => {
             const location = await Location.create({
                 name, departments, officers, city, searchQuery
