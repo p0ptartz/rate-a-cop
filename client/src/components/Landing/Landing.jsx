@@ -29,7 +29,7 @@ function Landing() {
             country: city.adminArea1
           }
         });
-        navigate(`/officer`);
+        navigate(`/location`);
       } catch (e) {
         console.error(e);
       }
