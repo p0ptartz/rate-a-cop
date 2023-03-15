@@ -1,0 +1,119 @@
+.location-container{
+    min-height: 70vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.location-overall{
+    height: 60vh;
+    width: 40vw;
+    
+    background-color: rgba(232, 232, 232, 0.586);
+}
+
+.location-graph-container {
+    height: 60vh;
+    width: 50vw;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(232, 232, 232, 0.586);
+}
+
+.location-name-container {
+    width: 40vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-name-container h2 {
+    font-size: 8vh;
+    text-align: center;
+}
+
+.location-info {
+    width: 40vw;
+    height: 40vh;
+}
+.location-rating{
+    display: flex;
+    width: 40vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.score{
+    font-size: 8vh;
+    margin-right: 1vw;
+}
+
+.total{
+    font-size: 4vh;
+    letter-spacing: 5px;
+    color: rgb(88, 87, 87);
+}
+
+.based-on {
+    height: 10vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+justify-content: center;
+font-size: 3vh
+}
+
+.location-icon-container{
+    width: 40vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-icon{
+    height: 17vh;
+    width: 13vw;
+    background-image: url(./frown.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+}
+
+.location-btn-container {
+    height: 10vh;
+    width: 40vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.add-officer,
+.view-officer {
+    width: 17vw;
+    height: 8vh;
+    border: none;
+    color: white;
+}
+
+.add-officer {
+    background-color: rgb(22, 52, 101);
+}
+
+.view-officer {
+    background-color: rgb(183, 11, 11);
+}
+.location-graph{
+    min-height: 50vh;
+    width: 40vw;
+    background-image: url(./bargraph.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
