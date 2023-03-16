@@ -9,14 +9,36 @@
   }
 
   .icon-size {
-    height: 200px;
-    width: 200px;
+    margin: 20px;
+    height: 150px;
+    width: 150px;
   }
   .icon-size2 {
-    height: 200px;
+    margin:20px;
+    height: 150px;
     width: 250px;
   }
 
   .about-card{
-    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px;
+  }
+
+  .icon-text {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-header {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-style: oblique;
   }
