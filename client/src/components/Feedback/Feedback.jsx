@@ -59,8 +59,8 @@ const Feedback = ({ place }) => {
             onChange={(e) => setFeedback({ ...feedback, rating: e.target.value })} />
         </div>
         <div className="input-container">
-          <label htmlFor="review-input">Review:</label>
-          <textarea id="review-input"
+          {/* <label htmlFor="review-input"></label> */}
+          <textarea id="review-input" placeholder='Leave your experience here'
             value={feedback.review}
             onChange={(e) => setFeedback({ ...feedback, review: e.target.value })}></textarea>
         </div>
