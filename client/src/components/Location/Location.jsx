@@ -14,8 +14,8 @@ import Feedback from '../Feedback/Feedback';
 
 
 function Location({ }) {
-
-    const { city } = useParams()
+    const navigate = useNavigate();
+    const { city } = useParams();
     const { loading, error, data } = useQuery(GET_FEEDBACKS)
     const [showFeedbacks, setShowFeedbacks] = useState(false);
     const [showAddOfficer, setShowAddOfficer] = useState(false);
@@ -48,6 +48,7 @@ function Location({ }) {
         setLocation(city);
         setShowAddOfficer(true);
     }
+
 
     return (
         <div>
