@@ -81,7 +81,7 @@ const Feedback = ({ place }) => {
               <label htmlFor="location-name-input">Location Name:</label>
               <input type="text"
                 id="location-name-input"
-                value={location}
+                value={place}
                 onChange={(e) => setLocation( e.target.value )}
  />
             </div>
