@@ -11,31 +11,15 @@
 .location-overall{
     height: 60vh;
     width: 45vw;
-    
+    border-radius: 20px;
     background-color: rgba(232, 232, 232, 0.586);
-}
-
-.location-graph-container {
-    height: 60vh;
-    width: 45vw;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(232, 232, 232, 0.586);
-}
-
-.location-graph{
-    min-height: 50vh;
-    width: 40vw;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    border: 1px solid rgb(172, 172, 172);
+    box-shadow: 5px 10px 10px rgb(64, 64, 64);
 }
 
 
 .location-name-container {
-    width: 40vw;
+    width: 45vw;
     height: 10vh;
     display: flex;
     align-items: center;
@@ -43,36 +27,37 @@
 }
 
 .location-name-container h2 {
-    font-size: 8vh;
+    font-size: 6vh;
     text-align: center;
+    margin-top: 1%;
 }
 
 .location-info {
-    width: 40vw;
+    width: 45vw;
     height: 40vh;
 }
 .location-rating{
     display: flex;
-    width: 40vw;
+    width: 45vw;
     height: 10vh;
     justify-content: center;
     align-items: center;
 }
 
 .score{
-    font-size: 8vh;
+    font-size: 6vh;
     margin-right: 1vw;
 }
 
 .total{
-    font-size: 4vh;
+    font-size: 3.5vh;
     letter-spacing: 5px;
     color: rgb(88, 87, 87);
 }
 
 .based-on {
     height: 10vh;
-    width: 40vw;
+    width: 45vw;
     display: flex;
     align-items: center;
 justify-content: center;
@@ -80,25 +65,31 @@ font-size: 3vh
 }
 
 .location-icon-container{
-    width: 40vw;
+    width: 45vw;
     height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 1px solid red; */
 }
 
 .location-icon{
     height: 17vh;
     width: 13vw;
-    
-    background-size: cover;
+    /* border: 1px solid purple; */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 30%;
 }
 
+.location-icon img{
+    height: 17vh;
+    width: 13vw;
+}
+
 .location-btn-container {
     height: 10vh;
-    width: 40vw;
+    width: 45vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
