@@ -92,24 +92,60 @@ font-size: 3vh
     width: 45vw;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .add-officer,
 .view-officer {
     width: 17vw;
-    height: 8vh;
+    height: 6vh;
     border: none;
     color: white;
     font-size: 2vh;
+    box-shadow: 4px 4px 10px rgb(107, 107, 107);
 }
 
 .add-officer {
-    background-color: rgb(22, 52, 101);
+    background-color: transparent;
+    border: 1px solid rgb(22, 52, 101);
+    color: rgb(22, 52, 101);
 }
 
 .view-officer {
-    background-color: rgb(183, 11, 11);
+    background-color: transparent;
+    border: 1px solid rgb(183, 11, 11);
+    color: rgb(183, 11, 11);
+    
+}
+
+.add-officer:hover {
+    background-color: transparent;
+    border: 1px solid rgb(183, 11, 11);
+    color: rgb(183, 11, 11);
+    background-color: rgba(233, 233, 233, 0.408);
+}
+
+.view-officer:hover{
+     background-color: transparent;
+    border: 1px solid rgb(22, 52, 101);
+    color: rgb(22, 52, 101);
+     background-color: rgba(233, 233, 233, 0.408);
+}
+
+.add-officer:active {
+      background-color: transparent;
+    border: 1px solid rgb(120, 6, 6);
+    color: rgb(120, 6, 6);
+    background-color: rgba(233, 233, 233, 0.408);
+    box-shadow:1px 1px 20px rgb(80, 154, 162);
+}
+
+.view-officer:active{
+     background-color: transparent;
+    border: 1px solid rgb(10, 25, 50);
+    color: rgb(10, 25, 50);
+     background-color: rgba(233, 233, 233, 0.408);
+     box-shadow:1px 1px 20px rgb(162, 80, 80);
 }
 
 .get-feedback-container {
@@ -118,30 +154,37 @@ font-size: 3vh
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .get-feedback {
-    width: 80vw;
+    width: 70vw;
     height: 20vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
+    justify-content: center;
     margin: 1% 0;
     /* flex-direction: column; */
+    box-shadow: 4px 4px 10px rgb(107, 107, 107);
 }
 
 .feedback-user {
     width: 15vw;
     height: 20vh;
-    border: 1px solid purple;
-    padding: 2%;
+    /* border: 1px solid purple; */
+    
+    background-color: rgb(225, 225, 225);
+    color: black;
 }
 
 .feedback-review{
     width: 55vw;
     height: 20vh;
-    border: 1px solid green;
-    margin-left: 1%;
+    /* border: 1px solid green; */
+     background-color: rgba(225, 225, 225, 0.35);
+    /* margin-left: 1%; */
     padding: 2%;
+    font-size: 2.1vh;
 }
 
 .add-officer-backdrop{
@@ -178,4 +221,40 @@ font-size: 3vh
     background-color: transparent;
     border: none;
     margin: 1%;
+}
+
+.officer-feedback-name{
+    font-size: 2vw;
+    color: black;
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.feedback-stars{
+    height: 10vh;
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    color: rgb(75, 75, 75);
+    /* border: 1px solid blue; */
+}
+.feedback-stars p{
+    border-top: 1px solid rgb(75, 75, 75);
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+#rating{
+    font-size: 3vw;
+   color: black;
+   letter-spacing: 3px;
 }
