@@ -4,9 +4,9 @@ const { Schema, model } = require('mongoose');
 const locationSchema = new Schema({
     name: {
         type: String,
-        required: false,
+        required: true,
         trim: true,
-        // unique: true
+        unique: true
     },
     departments: {
         type: String,
@@ -30,8 +30,9 @@ const locationSchema = new Schema({
         required: false,
     },
     ratings: [{
-        types: Schema.Types.ObjectId,
-        ref: "Feedback"
+        type: Schema.Types.ObjectId,
+        ref: "Feedback",
+        required: false
     }]
 })
 

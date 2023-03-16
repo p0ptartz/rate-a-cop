@@ -11,17 +11,17 @@ const feedbackSchema = new Schema({
         required: true,
     },
     officer: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "Officer",
-        required: true
+        required: false
     },
     city: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "Location",
-        required: true
+        required: false
     }
 });
 
-const Feedback = model('Feedback', feedbackSchema);
+const Feedback = model("Feedback", feedbackSchema);
 
 module.exports = Feedback;

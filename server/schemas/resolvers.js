@@ -68,9 +68,9 @@ const resolvers = {
             return feedback;
         },
 
-        addLocation: async (parent, { city, searchQuery }) => {
+        addLocation: async (parent, { city, name, searchQuery }) => {
             const location = await Location.create({
-             city, searchQuery
+             city, name, searchQuery
             })
             return location
         },

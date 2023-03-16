@@ -27,7 +27,7 @@ function Location({ }) {
             filteredAverage > 3 ? "https://em-content.zobj.net/thumbs/120/microsoft/319/shamrock_2618-fe0f.png" :
                 frownIcon
 
-    const [location, setLocation] = useState("Philly")
+    const [location, setLocation] = useState(city)
     const [feedbackForm, setFeedbackForm] = useState(false)
 
 
@@ -40,16 +40,16 @@ function Location({ }) {
     }
 
     const handleAddOfficerClick = () => {
-        setLocation(defaultLocation.name);
+        setLocation(city);
         setShowAddOfficer(true);
     }
 
-    const defaultLocation = {name: "Atlanta", state: "GA"}
+    // const defaultLocation = {name: "Atlanta", state: "GA"}
 
-    const handleLinkOfficersClick = () => {
-        setLocation(defaultLocation.name);
-        setFeedbackForm(true)
-    }    
+    // const handleLinkOfficersClick = () => {
+    //     setLocation(defaultLocation.name);
+    //     setFeedbackForm(true)
+    // }    
 
     return (
         <div>

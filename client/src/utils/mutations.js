@@ -42,8 +42,8 @@ export const ADD_DEPARTMENT = gql`
 `;
 
 export const ADD_LOCATION = gql`
-  mutation AddLocation($city: String!, $searchQuery: String) {
-    addLocation(city: $city, searchQuery: $searchQuery) {
+  mutation AddLocation($city: String!, $name: String! $searchQuery: String) {
+    addLocation(city: $city, name: $name, searchQuery: $searchQuery) {
       _id
       city
       searchQuery
