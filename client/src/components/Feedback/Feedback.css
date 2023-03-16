@@ -50,8 +50,8 @@
 
 
 .graph-container{
-    height: 50vh;
-    width: 40vw;
+    height: 65vh;
+    width: 45vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,13 +59,13 @@
 }
 
 .graph-body{
-height: 45vh;
+height: 62vh;
 width: 38vw;
 border: 1px solid green;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+/* justify-content: center; */
 }
 .input-container{
     width: 38vw;
@@ -79,10 +79,36 @@ justify-content: center;
 textarea#review-input {
   width: 35vw;
  height: 20vh;
+  border: none;
+    border-bottom: 1px solid black;
+    padding-left: 2%;
 }
 
 .btn-container {
     width: 38vw;
     display: flex;
     justify-content: center;
+}
+
+#officer-name-input,
+#department-name-input{
+    height: 6vh;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-left: 2%;
+}
+
+#enter-feedback {
+    height: 10vh;
+    font-size: 2vw;
+    width: 38vw;
+    border: 1px solid red;
+}
+
+#of-name{
+    margin-top: 5%;
+}
+
+.submit-btn{
+    width: 20vw;
 }
