@@ -76,7 +76,7 @@ const Feedback = ({ place }) => {
             }
           ></textarea>
         </div>
-        <div className="input-container">
+        <div className="input-container" id='star-contain'>
           <label htmlFor="rating-input">
           </label>
           <Rating

@@ -167,3 +167,15 @@ font-size: 3vh
   height: 70vh;
  
 }
+
+.add-officer-header{
+    width: 45vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-officer-header button{
+    background-color: transparent;
+    border: none;
+    margin: 1%;
+}
