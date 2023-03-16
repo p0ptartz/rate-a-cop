@@ -12,12 +12,12 @@ const feedbackSchema = new Schema({
     },
     officer: {
         type: String,
-        ref: "Officer",
+        // ref: "Officer",
         required: false
     },
     city: {
         type: String,
-        ref: "Location",
+        // ref: "Location",
         required: false
     }
 });
