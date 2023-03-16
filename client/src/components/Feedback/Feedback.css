@@ -51,7 +51,7 @@
 
 .graph-container{
     height: 50vh;
-    width: 55vw;
+    width: 40vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +60,8 @@
 
 .graph-body{
 height: 45vh;
-width: 45vw;
+width: 38vw;
 border: 1px solid green;
+display: flex;
+flex-direction: column;
 }
