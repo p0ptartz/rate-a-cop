@@ -21,6 +21,7 @@ function Location({ }) {
     const [showAddOfficer, setShowAddOfficer] = useState(false);
 
     const filteredFeedback = loading ? [] : data.feedbacks.filter((feedback) => feedback?.city == city);
+
     const filteredAverage = loading ? "-" :
         filteredFeedback.length == 0 ? "-" :
             Math.round(filteredFeedback.map((feedback) => feedback.rating).reduce((a, b) => a + b, 0) / filteredFeedback.length * 10) / 10;
@@ -41,7 +42,8 @@ function Location({ }) {
         setShowFeedbacks(true);
         console.log(data.feedbacks.filter((feedback) => feedback?.city == city))
     }
-
+    
+    
     const handleAddOfficerClick = () => {
         setLocation(city);
         setShowAddOfficer(true);

@@ -28,7 +28,7 @@ const Feedback = ({ place }) => {
     e.preventDefault();
     console.log('Submitting form...', feedback, officer);
     await Promise.all([
-      addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating), officer: officer.name, city: place} }),
+      addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating), officer: officer.name, city: location} }),
       addOfficer({ variables: { name: officer.name, position: officer.position, officerId: officer.id} })
     ]);
     console.log('Form submitted', feedback, officer);
