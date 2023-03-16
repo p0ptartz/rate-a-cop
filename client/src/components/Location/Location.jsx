@@ -85,7 +85,7 @@ function Location({ }) {
                         data.feedbacks.filter((feedback) => feedback?.city == city).map((feedback) => (
                             <section className="get-feedback" key={feedback._id}>
                                 <div className="feedback-user">
-                                    {feedback.rating}
+                                    {feedback.rating} Stars
                                 </div>
                                 <div className="feedback-review">
                                     {feedback.review}
