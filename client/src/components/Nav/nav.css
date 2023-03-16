@@ -15,7 +15,8 @@
      text-align: center;
      letter-spacing: 3px;
      border-right: 1px solid rgb(44, 44, 44);
-     
+     text-decoration: none;
+     color: black;
 }
 
 .nav-about-p{

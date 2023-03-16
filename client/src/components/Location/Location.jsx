@@ -29,13 +29,13 @@ function Location({ }) {
     // THIS GUY DOES THE IMAGE URL THING
     let filteredBg;
     if (filteredAverage > 4) {
-      filteredBg = goodIcon;
+        filteredBg = goodIcon;
     } else if (filteredAverage < 2.6) {
-      filteredBg = badIcon;
+        filteredBg = badIcon;
     } else {
-      filteredBg = mehIcon;
+        filteredBg = mehIcon;
     }
-    
+
 
     const [location, setLocation] = useState(city)
     const [feedbackForm, setFeedbackForm] = useState(false)
@@ -48,8 +48,8 @@ function Location({ }) {
         setShowFeedbacks(true);
         console.log(data.feedbacks.filter((feedback) => feedback?.city == city))
     }
-    
-    
+
+
     const handleAddOfficerClick = () => {
         setLocation(city);
         setShowAddOfficer(true);
@@ -90,13 +90,20 @@ function Location({ }) {
                     {
                         data.feedbacks.filter((feedback) => feedback?.city == city).map((feedback) => (
                             <section className="get-feedback" key={feedback._id}>
-                                <div className='officer-name'>
-                                    <p>
-                                        {feedback.officer}
-                                    </p>
-                                </div>
+
                                 <div className="feedback-user">
-                                    {feedback.rating} Stars
+                                    <div className='officer-feedback-name'>
+                                        <p>
+                                            {feedback.officer}
+                                        </p>
+                                    </div>
+                                    <div className="feedback-stars">
+                                        <p>
+                                            <span id='rating'>{feedback.rating} </span>/5
+                                        </p>
+
+                                    </div>
+
                                 </div>
                                 <div className="feedback-review">
                                     {feedback.review}
