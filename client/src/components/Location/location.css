@@ -145,7 +145,7 @@ font-size: 3vh
 }
 
 .add-officer-backdrop{
-    background-color: rgba(0, 0, 0, 0.441);
+    background-color: rgba(0, 0, 0, 0.548);
     width: 100vw;
     height: 100vh;
       position: fixed;
@@ -163,8 +163,7 @@ font-size: 3vh
   background-color: white;
   z-index: 3;
   /* padding: 20px; */
-  width:40vw;
-  height: 60vh;
-  min-height: 500px;
-  min-width: 300px;
+  width:45vw;
+  height: 70vh;
+ 
 }

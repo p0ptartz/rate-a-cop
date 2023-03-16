@@ -40,8 +40,10 @@ const Feedback = ({ place }) => {
   return (
     <div className="graph-container">
       <div className="graph-body">
-        <div className="input-container">
-          <label htmlFor="officer-name-input"></label>
+        <div className="input-container" id='enter-feedback'>
+          <h2>Enter Feedback Below</h2>
+        </div>
+        <div className="input-container" id='of-name'>
           <input
             type="text"
             id="officer-name-input"
@@ -52,7 +54,7 @@ const Feedback = ({ place }) => {
             }
           />
         </div>
-        <div className="input-container">
+        {/* <div className="input-container">
           <label htmlFor="department-name-input"></label>
           <input
             type="text"
@@ -63,10 +65,19 @@ const Feedback = ({ place }) => {
               setDepartment({ ...department, name: e.target.value })
             }
           />
+        </div> */}
+
+        <div className="input-container">
+          <textarea placeholder='Write about your experience here'
+            id="review-input"
+            value={feedback.review}
+            onChange={(e) =>
+              setFeedback({ ...feedback, review: e.target.value })
+            }
+          ></textarea>
         </div>
         <div className="input-container">
-          <label htmlFor="rating-input" placeholder="Enter a number between 1 and 5">
-            Rating:
+          <label htmlFor="rating-input">
           </label>
           <Rating
             count={5}
@@ -77,16 +88,6 @@ const Feedback = ({ place }) => {
               setFeedback({ ...feedback, rating: value })
             }
           />
-        </div>
-        <div className="input-container">
-          <label htmlFor="review-input">Review:</label>
-          <textarea
-            id="review-input"
-            value={feedback.review}
-            onChange={(e) =>
-              setFeedback({ ...feedback, review: e.target.value })
-            }
-          ></textarea>
         </div>
         <div className="btn-container">
           <button className="submit-btn" onClick={handleFormSubmit}>
