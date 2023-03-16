@@ -1,14 +1,15 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-type Location {
-    _id: ID
-    name: String!
-    departments: String!
-    officers: String!
-    city: String!
-    searchQuery: String!
-}
+    type Location {
+        _id: ID
+        name: String
+        departments: String
+        officers: [Officer]
+        city: String!
+        searchQuery: String
+        ratings: [Feedback]
+    }
 
     type Department {
         _id: ID
@@ -26,9 +27,10 @@ type Location {
 
     type Feedback {
         _id: ID
-        review: String
-        rating: Int
-        city: String
+        review: String!
+        rating: Int!
+        officer: Officer!
+        city: Location!
     }
 
     type User {
@@ -62,7 +64,7 @@ type Location {
 
         addDepartment(name: String!): Department
 
-        addLocation(name: String!, departments: String!, officers: String!, city: String!, searchQuery: String!): Location
+        addLocation(city: String!, searchQuery: String): Location
 
         removeFeedback: String!
     }

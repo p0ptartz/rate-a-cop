@@ -3,16 +3,22 @@ const { Schema, model } = require('mongoose');
 const feedbackSchema = new Schema({
     review: {
         type: String,
-        required: false,
+        required: true,
         trim: true,
     },
     rating: {
         type: Number,
-        required: false,
+        required: true,
+    },
+    officer: {
+        type: Schema.Types.ObjectId,
+        ref: "Officer",
+        required: true
     },
     city: {
-        type: String,
+        type: Schema.Types.ObjectId,
         ref: "Location",
+        required: true
     }
 });
 

@@ -61,15 +61,16 @@ const resolvers = {
         },
 
 
-        addFeedback: async (parent, { review, rating, city }) => {
+        addFeedback: async (parent, { review, rating, officer, city }) => {
 
-            const feedback = await Feedback.create({ review, rating, city });
+            const feedback = await Feedback.create({ review, rating, officer, city });
 
             return feedback;
         },
-        addLocation: async (parent, { name, departments, officers, city, searchQuery }) => {
+
+        addLocation: async (parent, { city, searchQuery }) => {
             const location = await Location.create({
-                name, departments, officers, city, searchQuery
+             city, searchQuery
             })
             return location
         },

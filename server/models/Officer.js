@@ -16,11 +16,10 @@ const officerSchema = new Schema({
         required: false,
         trim: true,
     },
-    ratings: {
-        type: String,
-        required: false,
-        trim: true,
-    }
+    ratings: [{
+        type: Schema.Types.ObjectId,
+        ref: "Feedback"
+    }]
 });
 
 const Officer = model('Officer', officerSchema);

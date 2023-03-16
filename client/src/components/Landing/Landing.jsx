@@ -20,9 +20,9 @@ function Landing() {
       try {
         await addLocation({
           variables: {
-            name: city.adminArea5,
-            departments: "",
-            officers: "",
+            // name: city.adminArea5,
+            // departments: "",
+            // officers: "",
             searchQuery: searchText,
             city: city.adminArea5,
             state: city.adminArea3,
