@@ -20,8 +20,8 @@ const Feedback = ({ place }) => {
 
 
   const [addFeedback] = useMutation(ADD_FEEDBACK);
-  const [addDepartment] = useMutation(ADD_DEPARTMENT);
-  const [addLocation] = useMutation(ADD_LOCATION);
+  // const [addDepartment] = useMutation(ADD_DEPARTMENT);
+  // const [addLocation] = useMutation(ADD_LOCATION);
   const [addOfficer] = useMutation(ADD_OFFICER);
 
   const handleFormSubmit = async (e) => {
@@ -29,8 +29,6 @@ const Feedback = ({ place }) => {
     console.log('Submitting form...', feedback, department, officer,location);
     await Promise.all([
       addFeedback({ variables: { review: feedback.review, rating: Number(feedback.rating) } }),
-      addDepartment({ variables: { name: department.name } }),
-      addLocation({ variables: { name: location.name } }),
       addOfficer({ variables: { name: officer.name, position: officer.position, officerId: officer.id} })
     ]);
     console.log('Form submitted', location);
