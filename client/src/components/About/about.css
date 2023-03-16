@@ -1,0 +1,22 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .card {
+    margin: 10px;
+  }
+
+  .icon-size {
+    height: 200px;
+    width: 200px;
+  }
+  .icon-size2 {
+    height: 200px;
+    width: 250px;
+  }
+
+  .about-card{
+    align-self: center;
+  }
