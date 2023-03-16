@@ -55,8 +55,10 @@ type Location {
 
     type Mutation {
         addFeedback(review: String!, rating: Int!, city: String): Feedback
+        
+        addUser(username: String!, password: String!): Auth
 
-        addUser(username: String!, password: String!): User
+        login(username: String!, password: String!): Auth
 
         addOfficer(name: String!, position: String, officerId: Int): Officer
 

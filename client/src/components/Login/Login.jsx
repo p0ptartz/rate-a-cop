@@ -69,6 +69,8 @@ function Login({ onCloseClick }) {
             password: '',
           })
           
+          Auth.login(data.addUser)
+
         } catch (e) {
           console.error(e);
         }
