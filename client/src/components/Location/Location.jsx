@@ -27,9 +27,15 @@ function Location({ }) {
             Math.round(filteredFeedback.map((feedback) => feedback.rating).reduce((a, b) => a + b, 0) / filteredFeedback.length * 10) / 10;
 
     // THIS GUY DOES THE IMAGE URL THING
-    const filteredBg = filteredAverage == "-" ? mehIcon :
-        filteredAverage > 4 ? goodIcon : mehIcon
-    filteredAverage > 2.6 ? mehIcon : badIcon
+    let filteredBg;
+    if (filteredAverage > 4) {
+      filteredBg = goodIcon;
+    } else if (filteredAverage < 2.6) {
+      filteredBg = badIcon;
+    } else {
+      filteredBg = mehIcon;
+    }
+    
 
     const [location, setLocation] = useState(city)
     const [feedbackForm, setFeedbackForm] = useState(false)
