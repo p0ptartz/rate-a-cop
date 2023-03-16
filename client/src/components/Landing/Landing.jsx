@@ -82,9 +82,6 @@ function Landing() {
           <p>GET STARTED:</p>
         </div>
         <div className="direction-container">
-          <div className="directions">
-            <p>Search by State, City, or Zip-code</p>
-          </div>
           <div className="input-form">
             <input
               id="place-search-input"
