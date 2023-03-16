@@ -26,15 +26,14 @@ Mongoose (for MongoDB object modeling)
 Concurrently (for running both the client and server concurrently)
 
 ## Contributions
-
--add links for our githubs and names here-
+Eric M., Seve N., Eric N. , Madison W.
 
 ## License 
 This project is licensed under the MIT License.
 
 ## Links
-
-links here
+Deployed:
+https://rate-a-cop-acab.herokuapp.com/
 
 
 
