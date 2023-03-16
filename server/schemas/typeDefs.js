@@ -56,7 +56,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addFeedback(review: String!, rating: Int!, city: String): Feedback
+        addFeedback(review: String!, rating: Int!, officer: String, city: String): Feedback
 
         addUser(username: String!, password: String!): User
 

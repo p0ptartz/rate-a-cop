@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const ADD_FEEDBACK = gql`
-  mutation AddFeedback($review: String!, $rating: Int!, $city: String) {
-    addFeedback(review: $review, rating: $rating, city: $city) {
+  mutation AddFeedback($review: String!, $rating: Int!, $officer: String, $city: String) {
+    addFeedback(review: $review, rating: $rating, officer: $officer, city: $city) {
       _id
       review
       rating
