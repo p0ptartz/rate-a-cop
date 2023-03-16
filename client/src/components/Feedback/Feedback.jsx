@@ -8,20 +8,16 @@ import {
 } from '../../utils/mutations';
 import './Feedback.css';
 import Rating from 'react-rating-stars-component';
-
 const Feedback = ({ place }) => {
   const [feedback, setFeedback] = useState({ review: '', rating: 0 });
   const [department, setDepartment] = useState({ name: '', officers: '' });
   const [location, setLocation] = useState(place);
   const [officer, setOfficer] = useState({ name: '', position: '', officerId: '' });
-
   const [addFeedback] = useMutation(ADD_FEEDBACK);
   const [addOfficer] = useMutation(ADD_OFFICER);
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitting form...', feedback, officer);
-
     await Promise.all([
       addFeedback({
         variables: {
@@ -41,7 +37,6 @@ const Feedback = ({ place }) => {
     ]);
     console.log('Form submitted', feedback, officer);
   };
-
   return (
     <div className="graph-container">
       <div className="graph-body">
@@ -76,7 +71,7 @@ const Feedback = ({ place }) => {
           <Rating
             count={5}
             size={24}
-            activeColor="#ffd700"
+            activeColor="#FFD700"
             value={feedback.rating}
             onChange={(value) =>
               setFeedback({ ...feedback, rating: value })
@@ -84,7 +79,9 @@ const Feedback = ({ place }) => {
           />
         </div>
         <div className="input-container">
-
+          <label htmlFor="review-input">Review:</label>
+          <textarea
+            id="review-input"
             value={feedback.review}
             onChange={(e) =>
               setFeedback({ ...feedback, review: e.target.value })
@@ -100,6 +97,4 @@ const Feedback = ({ place }) => {
     </div>
   );
 };
-
 export default Feedback;
-
