@@ -162,7 +162,7 @@ font-size: 3vh
   transform: translate(-50%, -50%);
   background-color: white;
   z-index: 3;
-  padding: 20px;
-  width:65vw;
+  /* padding: 20px; */
+  width:40vw;
   height: 60vh;
 }
