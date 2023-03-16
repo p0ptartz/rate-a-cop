@@ -6,6 +6,7 @@ export const GET_FEEDBACKS = gql`
       _id
       review
       rating
+      officer
       city
     }
   }

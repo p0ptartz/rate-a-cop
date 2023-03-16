@@ -30,7 +30,7 @@ function Location({ }) {
         filteredAverage > 4 ? goodIcon : mehIcon
     filteredAverage > 2.6 ? mehIcon : badIcon
 
-    const [location, setLocation] = useState("Philly")
+    const [location, setLocation] = useState(city)
     const [feedbackForm, setFeedbackForm] = useState(false)
 
 
@@ -43,15 +43,8 @@ function Location({ }) {
     }
 
     const handleAddOfficerClick = () => {
-        setLocation(defaultLocation.name);
+        setLocation(city);
         setShowAddOfficer(true);
-    }
-
-    const defaultLocation = { name: "Atlanta", state: "GA" }
-
-    const handleLinkOfficersClick = () => {
-        setLocation(defaultLocation.name);
-        setFeedbackForm(true)
     }
 
     return (

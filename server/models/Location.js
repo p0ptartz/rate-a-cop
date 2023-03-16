@@ -13,22 +13,27 @@ const locationSchema = new Schema({
         required: false,
         trim: true,
     },
-    officers:
+    officers:[
     {
-        type: String,
+        type: Schema.Types.ObjectId,
         ref: "Officer",
         required: false
-    },
+    }],
     city: {
         type: String,
-        required: false,
+        required: true,
         trim: true,
-        unique: true
+        // unique: true
     },
     searchQuery: {
         type: String,
         required: false,
-    }
+    },
+    ratings: [{
+        type: Schema.Types.ObjectId,
+        ref: "Feedback",
+        required: false
+    }]
 })
 
 
