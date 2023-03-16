@@ -171,7 +171,7 @@ font-size: 3vh
 .feedback-user {
     width: 15vw;
     height: 20vh;
-    /* border: 1px solid purple; */
+    border-right: 1px solid black;
     
     background-color: rgb(225, 225, 225);
     color: black;
@@ -224,7 +224,7 @@ font-size: 3vh
 }
 
 .officer-feedback-name{
-    font-size: 2vw;
+    font-size: 1rem;
     color: black;
     width: 15vw;
     height: 10vh;
